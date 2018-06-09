@@ -3,8 +3,7 @@ class CreateAnswers < ActiveRecord::Migration[5.1]
     create_table :answers do |t|
       t.text :body
       t.boolean :correct
-      t.references :question
-      t.references :user
+      t.references :question, foreign_key: true
 
       t.timestamps
     end

@@ -1,6 +1,6 @@
 class Test < ApplicationRecord
   def self.by_category(name)
-    self.where("category_id = ?", Category.find_by(title: name).id).order(title: :desc).pluck(:title)
+    self.joins('JOIN categories ON category_id = categories.id').where(categories: { title: name }).order(title: :desc).pluck(:title).uniq
   end
 end
 

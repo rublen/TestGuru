@@ -1,7 +1,48 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create!(name: 'student0')
+
+categories = Category.create! [{title: 'Ruby'}, {title: 'Ruby on Rails'}, {title: 'HTML'}, {title: 'JS'}]
+
+tests = Test.create! [
+  { title: 'Ruby Basics', level: 0, category_id: categories[0].id },
+  { title: 'Ruby Metaprogramming', level: 2, category_id: categories[0].id },
+  { title: 'ActiveRecord', level: 1, category_id: categories[1].id },
+  { title: 'JS Basics', level: 0, category_id: categories[3].id }
+]
+
+questions = Question.create! [
+  { body: 'What does self mean in Ruby?', test_id: tests[1].id },
+  { body: 'What are scope gates in Ruby?', test_id: tests[1].id },
+  { body: 'What is ORM?', test_id: tests[2].id },
+  { body: 'How to get color for text in javascript?', test_id: tests[3].id }
+]
+
+Answer.create! [
+  { body: 'Instance method', question_id: questions[0].id, correct: false },
+  { body: 'Instance variable', question_id: questions[0].id, correct: false },
+  { body: 'Default object', question_id: questions[0].id, correct: true },
+
+  { body: 'Braces { }', question_id: questions[1].id, correct: false },
+  { body: 'Brackets [ ]', question_id: questions[1].id, correct: false },
+  { body: 'Key word "def"', question_id: questions[1].id, correct: true },
+  { body: 'Key word "class"', question_id: questions[1].id, correct: true },
+  { body: 'Key word "module"', question_id: questions[1].id, correct: true },
+
+  { body: 'Object-relational mapping', question_id: questions[2].id, correct: true },
+  { body: 'Object\'s record management', question_id: questions[2].id, correct: false },
+  { body: 'Something else', question_id: questions[2].id, correct: false },
+
+  { body: 'document.getElementById("myP").style.color', question_id: questions[3].id, correct: true },
+  { body: '<p>.get_color', question_id: questions[3].id, correct: false },
+  { body: 'document.getElementById("myP").color', question_id: questions[3].id, correct: false },
+]
+
+TestPassage.create! [
+  { test_id: tests[0].id, user_id: user.id },
+  { test_id: tests[1].id, user_id: user.id },
+  { test_id: tests[2].id, user_id: user.id },
+  { test_id: tests[3].id, user_id: user.id },
+]
+

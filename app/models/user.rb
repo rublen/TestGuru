@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  has_many :test_passages
+  has_many :tests, through: :test_passages
+  has_many :authored_tests, class_name: 'Test'
+
   def passed_tests_by_level(level)
-    Test.where(level: level, test_passages: { user_id: id })
-      .joins("JOIN test_passages ON tests.id = test_id")
+    tests.where(level: level)
   end
 end

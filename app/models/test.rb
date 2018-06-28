@@ -5,6 +5,10 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :test_passages
 
+  scope :elementary, -> { where level: 0..1 }
+  scope :intermediate, -> { where level: 2..4 }
+  scope :advanced, -> { where level: 5..Float::INFINITY }
+
   def self.by_category(name)
     joins(:category).where(categories: { title: name })
     .order(title: :desc).pluck(:title)

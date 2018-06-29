@@ -19,9 +19,8 @@ class Test < ApplicationRecord
   scope :elementary, -> { where level: 0..1 }
   scope :intermediate, -> { where level: 2..4 }
   scope :advanced, -> { where level: 5..Float::INFINITY }
-
-  def self.by_category(name)
+  scope :select_by_category, ->(name) {
     joins(:category).where(categories: { title: name })
     .order(title: :desc).pluck(:title)
-  end
+  }
 end

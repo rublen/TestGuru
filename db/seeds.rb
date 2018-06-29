@@ -1,15 +1,16 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-user = User.create!(name: 'student0')
+author = User.create!(name: 'author')
+user = User.create!(name: 'user')
 
 categories = Category.create! [{title: 'Ruby'}, {title: 'Ruby on Rails'}, {title: 'HTML'}, {title: 'JS'}]
 
 tests = Test.create! [
-  { title: 'Ruby Basics', level: 0, category_id: categories[0].id },
-  { title: 'Ruby Metaprogramming', level: 2, category_id: categories[0].id },
-  { title: 'ActiveRecord', level: 1, category_id: categories[1].id },
-  { title: 'JS Basics', level: 0, category_id: categories[3].id }
+  { title: 'Ruby Basics', level: 0, category_id: categories[0].id, user_id: author.id },
+  { title: 'Ruby Metaprogramming', level: 2, category_id: categories[0].id, user_id: author.id },
+  { title: 'ActiveRecord', level: 1, category_id: categories[1].id, user_id: author.id },
+  { title: 'JS Basics', level: 0, category_id: categories[3].id, user_id: author.id }
 ]
 
 questions = Question.create! [

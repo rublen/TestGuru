@@ -5,6 +5,17 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :test_passages
 
+  validates :title, presence: true
+  validates :level, numericality: {
+    only_integer: true,
+    greater_than: 0,
+    message: 'should be a nutural number'
+  }
+  validates :title, uniqueness: {
+    scope: :level,
+    message: ->(test, data) {"'#{data[:value]}' with level '#{test.level}' is taken already"}
+  }
+
   scope :elementary, -> { where level: 0..1 }
   scope :intermediate, -> { where level: 2..4 }
   scope :advanced, -> { where level: 5..Float::INFINITY }

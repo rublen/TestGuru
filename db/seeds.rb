@@ -1,16 +1,16 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-author = User.create!(name: 'author')
-user = User.create!(name: 'user')
+author = User.create!(email: 'author@mail.com')
+user = User.create!(email: 'user@mail.com')
 
 categories = Category.create! [{title: 'Ruby'}, {title: 'Ruby on Rails'}, {title: 'HTML'}, {title: 'JS'}]
 
 tests = Test.create! [
-  { title: 'Ruby Basics', level: 0, category_id: categories[0].id, user_id: author.id },
-  { title: 'Ruby Metaprogramming', level: 2, category_id: categories[0].id, user_id: author.id },
-  { title: 'ActiveRecord', level: 1, category_id: categories[1].id, user_id: author.id },
-  { title: 'JS Basics', level: 0, category_id: categories[3].id, user_id: author.id }
+  { title: 'Ruby Basics', level: 1, category_id: categories[0].id, user_id: author.id },
+  { title: 'Ruby Metaprogramming', level: 3, category_id: categories[0].id, user_id: author.id },
+  { title: 'ActiveRecord', level: 2, category_id: categories[1].id, user_id: author.id },
+  { title: 'JS Basics', level: 1, category_id: categories[3].id, user_id: author.id }
 ]
 
 questions = Question.create! [
@@ -26,7 +26,6 @@ Answer.create! [
   { body: 'Default object', question_id: questions[0].id, correct: true },
 
   { body: 'Braces { }', question_id: questions[1].id, correct: false },
-  { body: 'Brackets [ ]', question_id: questions[1].id, correct: false },
   { body: 'Key word "def"', question_id: questions[1].id, correct: true },
   { body: 'Key word "class"', question_id: questions[1].id, correct: true },
   { body: 'Key word "module"', question_id: questions[1].id, correct: true },

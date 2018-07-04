@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
   def index
-    render plain: 'All tests'
+    render html: '<h1>All tests</h1>'.html_safe
   end
 end

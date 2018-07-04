@@ -1,6 +1,7 @@
-<h1>Create New Quewstion for Test '<%= @test.title%>' of level '<%= @test.level %>1'</h1>
-  <form action='/questions' method='post'>
+<h1>Create New Quewstion for Test '<%= @test.title%>' of level '<%= @test.level %>'</h1>
+  <form action='/tests/<%= params[:test_id] %>/questions' method='post'>
+    <input name='authenticity_token' value='<%= form_authenticity_token %>' type='hidden'>
     <label for='quest-body'>Question:</label>
     <input type='text' name='question[body]' id='quest-body'>
-    <input type='submit' value='create'>
+    <input type='submit' value='Create'>
   </form>

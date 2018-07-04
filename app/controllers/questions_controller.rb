@@ -1,11 +1,11 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: [:index, :new, :create]
-  before_action :find_question, except: [:index, :new, :create]
+  before_action :find_question, only: [:show, :destroy]
   
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render inline: '<%= @test.questions.join("\n") %>'
+    render plain: @test.questions.map(&:inspect).join("\n")
   end
   #/tests/1/questions
 
@@ -23,9 +23,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @test = Test.find(@question.test_id)
     @question.destroy
-    index
+    render plain: "Question was successfully deleted"
   end
   #/questions/15/delete
 

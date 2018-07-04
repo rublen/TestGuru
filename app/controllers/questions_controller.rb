@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    render inline: '<%= @test.questions.join("\n") %>'
+    render plain: @test.questions.map(&:inspect).join("\n")
   end
   #/tests/1/questions
 

@@ -26,9 +26,9 @@ class QuestionsController < ApplicationController
     @question.destroy
     render plain: "Question was successfully deleted"
   end
-  #/questions/15/delete
 
   private
+  
   def find_test
     @test = Test.find(params[:test_id])
   end

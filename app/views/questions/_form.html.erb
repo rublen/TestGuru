@@ -2,6 +2,6 @@
   <%= form.label :body %><br>
   <%= form.text_field :body, id: :question_body %><br>
   <%= form.submit %>
-<% end %>
+<% end %><br>
 
-
+<%= link_to '<< Back', test_questions_path(@test) %>

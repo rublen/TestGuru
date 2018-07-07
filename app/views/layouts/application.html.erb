@@ -18,10 +18,11 @@
         background-color: red;
         color: white;
         text-align: center;">
-      <p><%= Time.now.year.to_s + '.   Project ' %>
-      <%= link_to 'TestGuru', 'https://github.com/rublen/TestGuru' %>
-       done by rublen whithin Ruby on Rails course of online coding school
-      <%= link_to 'Thinknetica', 'http://thinknetica.com' %></p>
+      <p> <%= current_year.to_s + '.   Project ' %>
+          <%= link_to_github('rublen', 'TestGuru') %>
+          whithin RoR course of online coding school
+          <%= link_to 'Thinknetica', 'http://thinknetica.com' %>
+      </p>
     </footer>
   </body>
 </html>

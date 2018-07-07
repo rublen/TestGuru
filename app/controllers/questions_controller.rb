@@ -1,48 +1,39 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: [:index, :new, :create]
+  before_action :find_test
   before_action :find_question, only: [:show, :edit, :update, :destroy]
 
-  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     @questions = @test.questions
   end
-  #/tests/1/questions
 
   def new
     @question = Question.new
   end
-  # /tests/1/questions/new
 
-  def show
-    @question
-  end
-  #/questions/1
+  def show; end
 
-  def edit
-    # @test = Test.find_by_id(@question.test_id)
-  end
-  #/questions/1/edit
+  def edit; end
 
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to test_question_path(@test, @question)
     else
       render :new
     end
   end
 
   def update
-    if @question.update!(question_params)
-      redirect_to @question
+    if @question.update(question_params)
+      redirect_to test_question_path(@test, @question)
     else
       render :edit
     end
   end
 
   def destroy
-    @test = Test.find_by_id(@question.test_id)
     @question.destroy
     redirect_to test_questions_path(@test)
   end

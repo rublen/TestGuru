@@ -1,11 +1,21 @@
 <%= content_for :content do %>
-  <% if @test %>
-    <h3>Test: <%= @test.title%></h3>
-    <p>Number of questions: <%= @test.questions.size %><br>
-    Category: <%= @test.category.title %><br>
-    Level: <%= @test.level %></p>
-    <%= content_for?(:questions_content) ? yield(:questions_content) : yield %>
-  <% end %>
+  <header style ="
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: darkorange;
+        color: white;>
+        text-align: left;">
+    <% if @test %>
+      <h3>Test: <%= @test.title%></h3>
+      <p>Number of questions: <%= @test.questions.size %> |
+        Category: <%= @test.category.title %> |
+        Level: <%= @test.level %>
+      </p>
+    <% end %>
+  </header>
+
+  <%= content_for?(:questions_content) ? yield(:questions_content) : yield %>
 <% end %>
 
 <%= render template: "layouts/application" %>

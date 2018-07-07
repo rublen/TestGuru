@@ -1,3 +1,4 @@
+<h2>Questions:</h2>
 <table style='border-spacing: 5px;'>
   <tr >
     <th style='border-bottom: 1pt solid black'>id</th>
@@ -7,4 +8,4 @@
   <%= render @questions %>
 </table><br>
 
-<%= link_to 'New question', new_test_question_path %>
+<%= link_to 'New question', new_test_question_path(@test) %>

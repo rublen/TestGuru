@@ -1,11 +1,14 @@
-<h3>Q: <%= @question.body%></h3>
-<p>Number of answers: <%= @question.answers.size %><br>
-id: <%= @question.id %></p>
+<h3>Question: <%= @question.body%></h3>
+<p>
+  Number of answers: <%= @question.answers.size %><br>
+  id: <%= @question.id %>
+</p>
 
 <p>
-  <%= link_to 'Edit', edit_question_path(@question) %>
-  <%= link_to '[X]Delete', question_path(@question),
-            method: :delete,
-            data: { confirm: 'Are you sure?' }%>
-  <%= link_to '<<Back', test_questions_path(Test.find_by_id(@question.test_id)) %>
+  <%= link_to 'Edit', edit_test_question_path(@test, @question) %>
+  <%= link_to '[X]Delete', test_question_path(@test, @question),
+    method: :delete,
+    data: { confirm: 'Are you sure?' }
+  %>
+  <%= link_to '<<Back', test_questions_path(@test) %>
 </p>

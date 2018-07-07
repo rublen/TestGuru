@@ -1,0 +1,10 @@
+<table style='border-spacing: 5px;'>
+  <tr >
+    <th style='border-bottom: 1pt solid black'>id</th>
+    <th style='border-bottom: 1pt solid black'>Body</th>
+    <th style='border-bottom: 1pt solid black' colspan="3">Actions</th>
+  </tr>
+  <%= render @questions %>
+</table><br>
+
+<%= link_to 'New question', new_test_question_path %>

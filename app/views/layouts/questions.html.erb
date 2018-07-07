@@ -1,0 +1,11 @@
+<%= content_for :content do %>
+  <% if @test %>
+    <h3>Test: <%= @test.title%></h3>
+    <p>Number of questions: <%= @test.questions.size %><br>
+    Category: <%= @test.category.title %><br>
+    Level: <%= @test.level %></p>
+    <%= content_for?(:questions_content) ? yield(:questions_content) : yield %>
+  <% end %>
+<% end %>
+
+<%= render template: "layouts/application" %>

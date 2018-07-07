@@ -1,0 +1,10 @@
+<tr>
+  <td><%= question.id %></td>
+  <td><%= question.body %></td>
+  <td><%= link_to 'show', question_path(question) %></td>
+  <td><%= link_to 'edit', edit_question_path(question) %></td>
+  <td><%= link_to 'delete', question_path(question),
+          method: :delete,
+          data: { confirm: 'Are you sure?' }%>
+  </td>
+</tr>

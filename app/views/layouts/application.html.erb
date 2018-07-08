@@ -9,20 +9,14 @@
   </head>
 
   <body>
-    <%= content_for?(:content) ? yield(:content) : yield %>
-    <footer style ="
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;">
-      <p> <%= current_year.to_s + '.   Project ' %>
-          <%= link_to_github('rublen', 'TestGuru') %>
-          whithin RoR course of online coding school
-          <%= link_to 'Thinknetica', 'http://thinknetica.com' %>
+    <%= yield %>
+    <div class='footer'>
+      <p>
+        <%= "#{current_year}.   Project " %>
+        <%= link_to_github('rublen', 'TestGuru') %>
+        whithin RoR course of online coding school
+        <%= link_to 'Thinknetica', 'http://thinknetica.com', target: :_blank %>
       </p>
-    </footer>
+    </div>
   </body>
 </html>

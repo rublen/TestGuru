@@ -1,5 +1,17 @@
 class TestsController < ApplicationController
+  before_action :find_test, only: [:new, :create, :show, :destroy]
+
   def index
-    render html: '<h1>All tests</h1>'.html_safe
+    @tests = Test.all
+  end
+
+  def show
+    @questions = @test.questions
+  end
+
+  private
+
+  def find_test
+    @test = Test.find(params[:id])
   end
 end

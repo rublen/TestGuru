@@ -5,10 +5,10 @@
 </p>
 
 <p>
-  <%= link_to 'Edit', edit_test_question_path(@test, @question) %>
-  <%= link_to '[X]Delete', test_question_path(@test, @question),
+  <%= link_to '<<Tests', tests_path %>
+  <%= link_to 'Edit', edit_question_path(@question) %>
+  <%= link_to '[X]Delete', @question,
     method: :delete,
     data: { confirm: 'Are you sure?' }
   %>
-  <%= link_to '<<Back', test_questions_path(@test) %>
 </p>

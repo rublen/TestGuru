@@ -1,0 +1,18 @@
+<h2>Test: <%= @test.title%></h2>
+  <p>Number of questions: <%= @test.questions.size %> |
+    Category: <%= @test.category.title %> |
+    Level: <%= @test.level %>
+  </p>
+
+  <h3>Questions:</h3>
+<table style='border-spacing: 5px;'>
+  <tr >
+    <th style='border-bottom: 1pt solid black'>id</th>
+    <th style='border-bottom: 1pt solid black'>Body</th>
+    <th style='border-bottom: 1pt solid black' colspan="3">Actions</th>
+  </tr>
+  <%= render @questions %>
+</table><br>
+
+<%= link_to '<< Tests', tests_path %>
+<%= link_to 'New question', new_test_question_path(@test) %>

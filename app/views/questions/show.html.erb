@@ -1,0 +1,14 @@
+<h3>Question: <%= @question.body%></h3>
+<p>
+  Number of answers: <%= @question.answers.size %><br>
+  id: <%= @question.id %>
+</p>
+
+<p>
+  <%= link_to '<<Tests', tests_path %>
+  <%= link_to 'Edit', edit_question_path(@question) %>
+  <%= link_to '[X]Delete', @question,
+    method: :delete,
+    data: { confirm: 'Are you sure?' }
+  %>
+</p>

@@ -1,0 +1,10 @@
+<% if obj.errors.present? %>
+  <div>
+    <h3 style='color:Red'>
+      <%= pluralize(obj.errors.full_messages.size, 'error') %> detected
+    </h3>
+    <% obj.errors.full_messages.each do |message| %>
+      <li style='color:Red'><%= message %></li>
+    <% end %><br>
+  </div>
+<% end %>

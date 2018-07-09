@@ -9,7 +9,7 @@ class Answer < ApplicationRecord
   private
 
   def validate_number_of_answers
-    unless question.answers.size < 4
+    unless question.answers.size <= 4
       errors.add(:base, 'Too many answers for current question: the limit is 4')
     end
   end

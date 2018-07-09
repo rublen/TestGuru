@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: [:new, :create, :show, :destroy]
+  before_action :find_test, only: [:show]
 
   def index
     @tests = Test.all

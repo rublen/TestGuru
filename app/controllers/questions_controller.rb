@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def new
-    @question = Question.new
+    @question = @test.questions.build
   end
 
   def show; end
@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
   def destroy
     @test = Test.find_by_id(@question.test_id)
     @question.destroy
-    redirect_to @test
+    redirect_to @test, notice: 'The question was successfully deleted'
   end
 
   private

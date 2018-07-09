@@ -1,7 +1,6 @@
 module QuestionsHelper
-  def question_header
-    test = params[:test_id] ? Test.find(params[:test_id]) : Test.find_by_id(@question.test_id)
-    "#{@question.persisted? ? 'Edit' : 'Create New'} #{test.title} Question"
+  def question_header(question)
+    "#{question.persisted? ? 'Edit' : 'Create New'} #{question.test.title} Question"
   end
 
   def current_year

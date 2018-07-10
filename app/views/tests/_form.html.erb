@@ -1,0 +1,15 @@
+
+<%= form_with model: @test, local: true do |form| %>
+  <%= render 'shared/errors', obj: @test %>
+  <div class="actions">
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :test_title %><br>
+    <%= form.label :level %><br>
+    <%= form.number_field :level, id: :test_level %><br>
+    <%= form.label :Category %><br>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.submit %>
+  </div>
+<% end %><br>
+
+<%= link_to '<< Tests', tests_path %>

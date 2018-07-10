@@ -3,4 +3,10 @@
   <td><%= test.title %></td>
   <td><%= test.category.title %></td>
   <td><%= link_to 'show', test_path(test) %></td>
+  <td><%= link_to 'edit', edit_test_path(test) %></td>
+  <td><%= link_to 'delete', test,
+          method: :delete,
+          data: { confirm: 'Are you sure?' }%>
+  </td>
+  <td><%= button_to 'Start', start_test_path(test) %></td>
 </tr>

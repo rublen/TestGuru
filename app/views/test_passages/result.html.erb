@@ -1,0 +1,4 @@
+<h1>Test <%= @test_passage.test.title %> has been completed
+with score: <%= @test_passage.correct_questions %>/<%= @test_passage.test.questions.count %></h1>
+
+<%= link_to '<< Tests', tests_path %>

@@ -5,8 +5,30 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  def completed?
+    current_question.nil?
+  end
+
+  def accept!(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.current_question = next_question
+    save!
+  end
+
   private
   def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
+    self.current_question = test.questions.order(:id).first if test.present?
+  end
+
+  def correct_answer?(answer_ids)
+    answer_ids.map(&:to_i).sort == correct_answers.ids.sort
+  end
+
+  def correct_answers
+    current_question.answers.correct
+  end
+
+  def next_question
+    test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end

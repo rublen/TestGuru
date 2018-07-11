@@ -16,6 +16,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    @score = @test_passage.score
   end
 
   private

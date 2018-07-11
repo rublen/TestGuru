@@ -3,8 +3,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_save :before_save_set_next_question, on: :update, if: :question_not_first?
+  before_save :before_save_set_question
 
   def completed?
     current_question.nil?
@@ -17,20 +16,22 @@ class TestPassage < ApplicationRecord
   end
 
   def score
-    correct_questions * 100 / test.questions.count
+    (correct_questions * 100.0 / test.questions.count).round(2)
   end
 
   private
-  def before_validation_set_first_question
-    self.current_question = test.questions.order(:id).first if test.present?
-  end
 
-  def before_save_set_next_question
-    self.current_question = next_question
+  def before_save_set_question
+    return unless test.present?
+    if question_counter == 1
+      self.current_question = test.questions.order(:id).first
+    else
+      self.current_question = next_question
+    end
   end
 
   def correct_answer?(answer_ids)
-    answer_ids.map(&:to_i).sort == correct_answers.ids.sort
+    answer_ids.map(&:to_i).sort == correct_answers.ids.sort if answer_ids
   end
 
   def correct_answers
@@ -39,9 +40,5 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-  def question_not_first?
-    question_counter > 1
   end
 end

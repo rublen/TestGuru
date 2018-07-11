@@ -1,8 +1,5 @@
 <h1>Test <%= @test_passage.test.title %> has been completed</h1>
-<% if @score >= 85 %>
-  <p style="color:green">Correctness: <%= "#{@score} %. Passed!" %></p>
-<% else %>
-  <p style="color:red">Correctness: <%= "#{@score} %. Failed!" %></p>
-<% end %>
+
+<%= test_result(@test_passage.score) %>
 
 <%= link_to '<< Tests', tests_path %>

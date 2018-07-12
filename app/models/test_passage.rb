@@ -19,19 +19,18 @@ class TestPassage < ApplicationRecord
     (correct_questions * 100.0 / test.questions.count).round(2)
   end
 
+  def success?
+    score >= 85
+  end
+
   private
 
   def before_save_set_question
-    return unless test.present?
-    if question_counter == 1
-      self.current_question = test.questions.order(:id).first
-    else
-      self.current_question = next_question
-    end
+    self.current_question = next_question
   end
 
   def correct_answer?(answer_ids)
-    answer_ids.map(&:to_i).sort == correct_answers.ids.sort if answer_ids
+    Array(answer_ids).map(&:to_i).sort == correct_answers.ids.sort
   end
 
   def correct_answers
@@ -39,6 +38,10 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    if current_question
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    else
+      self.current_question = test.questions.order(:id).first
+    end
   end
 end

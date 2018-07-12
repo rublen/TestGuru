@@ -41,7 +41,7 @@ class TestPassage < ApplicationRecord
     if current_question
       test.questions.order(:id).where('id > ?', current_question.id).first
     else
-      self.current_question = test.questions.order(:id).first
+      test.questions.order(:id).first
     end
   end
 end

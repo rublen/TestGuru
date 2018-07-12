@@ -1,10 +1,14 @@
-<h2>Test: <%= @test.title%></h2>
-  <p>Number of questions: <%= @test.questions.size %> |
-    Category: <%= @test.category.title %> |
-    Level: <%= @test.level %>
-  </p>
+<p id="notice"><%= notice %></p>
 
-  <h3>Questions:</h3>
+<h2>Test: <%= @test.title%></h2>
+<p>Number of questions: <%= @test.questions.size %> |
+  Category: <%= @test.category.title %> |
+  Level: <%= @test.level %>
+</p>
+
+<h3>Questions:</h3>
+<p><%= link_to 'New question', new_test_question_path(@test) %></p>
+
 <table style='border-spacing: 5px;'>
   <tr >
     <th style='border-bottom: 1pt solid black'>id</th>
@@ -15,4 +19,3 @@
 </table><br>
 
 <%= link_to '<< Tests', tests_path %>
-<%= link_to 'New question', new_test_question_path(@test) %>

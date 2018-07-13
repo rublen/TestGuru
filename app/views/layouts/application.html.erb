@@ -9,7 +9,14 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p class='nav user'>
+        Welcome<b><%= current_user.email%></b>
+      </p>
+    <% end %>
+
     <%= yield %>
+
     <div class='footer'>
       <p>
         <%= "#{current_year}.   Project " %>

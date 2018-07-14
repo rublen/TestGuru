@@ -3,7 +3,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test'
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: /.+@.+\..+/i }
 
   has_secure_password
 

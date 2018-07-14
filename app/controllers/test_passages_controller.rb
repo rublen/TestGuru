@@ -21,6 +21,6 @@ class TestPassagesController < ApplicationController
   end
 
   def set_user
-    user = current_user.id
+    user = current_user
   end
 end

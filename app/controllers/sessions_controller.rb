@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to cookies[:path]
     else
       flash.now[:alert] = 'Verify your email and password please'
       render :new
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session.delete(:user_id)
     redirect_to tests_path, notice: 'Logged out'
   end
 end

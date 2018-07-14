@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get :login, to: 'sessions#new'
   resources :sessions, only: :create
 
+  get :logout, to: 'sessions#destroy'
+
   resources :tests do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index

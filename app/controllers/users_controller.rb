@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to cookies[:path]
+      redirect_to cookies[:path] ? cookies[:path] : '/'
     else
       render 'new'
     end

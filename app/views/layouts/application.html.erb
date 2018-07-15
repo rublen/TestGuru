@@ -9,7 +9,20 @@
   </head>
 
   <body>
+    <p class='nav user'>
+      <%= link_to 'TestGuru', root_path %>
+
+      <% if logged_in? %>
+        <%= link_to 'logout', logout_path %><br>
+        Welcome, <b><%= current_user.email %> </b> Guru
+      <% else %>
+        <%= link_to 'signup', signup_path %>
+        <%= link_to 'login', login_path %>
+      <% end %>
+    </p>
+
     <%= yield %>
+
     <div class='footer'>
       <p>
         <%= "#{current_year}.   Project " %>

@@ -1,0 +1,13 @@
+<%= form_with url: sessions_path, local: true do |form| %>
+
+  <%= display_flash(:alert) %>
+
+  <%= form.label :email %><br>
+  <%= form.text_field :email, id: :email %><br>
+
+  <%= form.label :password %><br>
+  <%= form.password_field :password, id: :password %><br>
+
+  <%= form.submit 'Enter' %>
+
+<% end %>

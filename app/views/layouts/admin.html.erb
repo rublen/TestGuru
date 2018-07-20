@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestGuru</title>
+    <title>TestGuruAdmin</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,17 +9,7 @@
   </head>
 
   <body>
-    <p class='nav user'>
-      <%= link_to 'TestGuru', root_path %> |
-      <% if user_signed_in? %>
-          Welcome, <b><%= current_user.email %> </b> Guru |
-          <%= link_to 'logout', destroy_user_session_path, method: :delete %><br>
-      <% else %>
-        <%= link_to 'signup', new_user_registration_path %> |
-        <%= link_to 'login', new_user_session_path %>
-      <% end %>
-    </p>
-
+    <%= render 'admin/nav' %><br>
     <%= render 'shared/flash' %>
 
     <%= yield %>

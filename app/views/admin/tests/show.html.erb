@@ -1,5 +1,3 @@
-<%= display_flash(:notice) %>
-
 <h2>Test: <%= @test.title%></h2>
 <p>Number of questions: <%= @test.questions.size %> |
   Category: <%= @test.category.title %> |
@@ -13,9 +11,8 @@
   <tr >
     <th style='border-bottom: 1pt solid black'>id</th>
     <th style='border-bottom: 1pt solid black'>Body</th>
-    <th style='border-bottom: 1pt solid black' colspan="3">Actions</th>
   </tr>
-  <%= render @questions %>
+  <%= render partial: 'questions/question', collection: @test.questions %>
 </table><br>
 
-<%= link_to '<< Tests', tests_path %>
+<%= link_to '<< Tests', admin_tests_path %>

@@ -1,5 +1,5 @@
 
-<%= form_with model: @test, local: true do |form| %>
+<%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', obj: @test %>
   <div class="actions">
     <%= form.label :title %><br>
@@ -12,4 +12,4 @@
   </div>
 <% end %><br>
 
-<%= link_to '<< Tests', tests_path %>
+<%= link_to '<< Tests', admin_tests_path %>

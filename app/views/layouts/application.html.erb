@@ -12,7 +12,7 @@
     <p class='nav user'>
       <%= link_to 'TestGuru', root_path %> |
       <% if user_signed_in? %>
-          Welcome, <b><%= current_user.email %> </b> Guru |
+          Welcome, <b><%= current_user.first_name || current_user.email %>!</b> |
           <%= link_to 'logout', destroy_user_session_path, method: :delete %><br>
       <% else %>
         <%= link_to 'signup', new_user_registration_path %> |

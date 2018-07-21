@@ -5,7 +5,7 @@
 </p>
 
 <h3>Answers:</h3>
-<%= link_to 'New answer', new_question_answer_path(@question) %><br>
+<%= link_to 'New answer', new_admin_question_answer_path(@question) %><br>
 <table style='border-spacing: 5px;'>
   <tr >
     <th style='border-bottom: 1pt solid black'>id</th>
@@ -15,9 +15,9 @@
 </table><br>
 
 <p>
-  <%= link_to '<<Tests', tests_path %> |
-  <%= link_to 'Edit', edit_question_path(@question) %> |
-  <%= link_to 'Delete', @question,
+  <%= link_to '<<Tests', admin_tests_path %> |
+  <%= link_to 'Edit', edit_admin_question_path(@question) %> |
+  <%= link_to 'Delete', [:admin, @question],
     method: :delete,
     data: { confirm: 'Are you sure?' }
   %> |

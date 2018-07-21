@@ -1,4 +1,4 @@
-class QuestionsController < AuthenticatedController
+class Admin::QuestionsController < AuthenticatedController
   before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show edit update destroy]
 
@@ -15,7 +15,7 @@ class QuestionsController < AuthenticatedController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to @question
+      redirect_to [:admin, @question]
     else
       render :new
     end
@@ -23,7 +23,7 @@ class QuestionsController < AuthenticatedController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to [:admin, @question]
     else
       render :edit
     end
@@ -32,7 +32,7 @@ class QuestionsController < AuthenticatedController
   def destroy
     @test = @question.test
     @question.destroy
-    redirect_to @test, notice: 'The question was successfully deleted'
+    redirect_to [:admin, @test], notice: 'The question was successfully deleted'
   end
 
   private

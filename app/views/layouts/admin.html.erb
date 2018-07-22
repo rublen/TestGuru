@@ -8,19 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <%= render 'shared/footer' %>
+
   <body>
+
     <%= render 'admin/nav' %><br>
     <%= render 'shared/flash' %>
 
     <%= yield %>
 
-    <div class='footer'>
-      <p>
-        <%= "#{current_year}.   Project " %>
-        <%= link_to_github('rublen', 'TestGuru') %>
-        whithin RoR course of online coding school
-        <%= link_to 'Thinknetica', 'http://thinknetica.com', target: :_blank %>
-      </p>
-    </div>
   </body>
 </html>

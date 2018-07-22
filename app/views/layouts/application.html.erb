@@ -9,28 +9,12 @@
   </head>
 
   <body>
-    <p class='nav user'>
-      <%= link_to 'TestGuru', root_path %> |
-      <% if user_signed_in? %>
-          Welcome, <b><%= current_user.first_name || current_user.email %>!</b> |
-          <%= link_to 'logout', destroy_user_session_path, method: :delete %><br>
-      <% else %>
-        <%= link_to 'signup', new_user_registration_path %> |
-        <%= link_to 'login', new_user_session_path %>
-      <% end %>
-    </p>
 
+    <%= render 'shared/nav' %>
     <%= render 'shared/flash' %>
 
     <%= yield %>
 
-    <div class='footer'>
-      <p>
-        <%= "#{current_year}.   Project " %>
-        <%= link_to_github('rublen', 'TestGuru') %>
-        whithin RoR course of online coding school
-        <%= link_to 'Thinknetica', 'http://thinknetica.com', target: :_blank %>
-      </p>
-    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>

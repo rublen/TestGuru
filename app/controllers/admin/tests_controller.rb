@@ -1,5 +1,4 @@
 class Admin::TestsController < Admin::BaseController
-  # skip_before_action :authenticate_user!, only: :index
   before_action :set_test, only: %i[show edit update destroy start]
 
   def index
@@ -17,8 +16,7 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = current_user
+    @test = current_user.authored_tests.build(test_params)
     if @test.save
       redirect_to admin_test_path(@test)
     else
@@ -37,11 +35,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path, notice: 'The test was successfully deleted'
-  end
-
-  def start
-    current_user.tests << @test
-    redirect_to current_user.test_passage(@test)
   end
 
   private

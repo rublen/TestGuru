@@ -1,5 +1,7 @@
 module ApplicationHelper
-  def display_flash(key)
-    content_tag :p, flash[key], class: "flash #{key}" if flash[key]
-  end
+  # def display_flash
+  #   flash.each do |key, message|
+  #     content_tag :p, message, class: "flash #{key}" if message
+  #   end
+  # end
 end

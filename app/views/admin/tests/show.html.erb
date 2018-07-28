@@ -1,0 +1,18 @@
+<h2>Test: <%= @test.title%></h2>
+<p>Number of questions: <%= @test.questions.size %> |
+  Category: <%= @test.category.title %> |
+  Level: <%= @test.level %>
+</p>
+
+<h3>Questions:</h3>
+<p><%= link_to 'New question', new_admin_test_question_path(@test) %></p>
+
+<table style='border-spacing: 5px;'>
+  <tr >
+    <th style='border-bottom: 1pt solid black'>id</th>
+    <th style='border-bottom: 1pt solid black'>Body</th>
+  </tr>
+  <%= render partial: 'admin/questions/question', collection: @test.questions %>
+</table><br>
+
+<%= link_to '<< Tests', admin_tests_path %>

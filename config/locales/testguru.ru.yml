@@ -1,0 +1,79 @@
+ru:
+  tests:
+    test:
+      start: 'Начать'
+    index:
+      header: "Доступные тесты"
+      table_header:
+        id: "Id"
+        title: "Название"
+        category: "Категория"
+        number_of_questions: "Количество вопросов"
+        actions: "Действие"
+  admin:
+    nav:
+      welcome: "Привет"
+    tests:
+      index:
+        header: "Доступные тесты"
+        table_header:
+          id: "Id"
+          title: "Название"
+          category: "Категория"
+          number_of_questions: "Количество вопросов"
+          actions: "Действия"
+        new_test: "Новый тест"
+      new:
+        header: "Создать новый тест"
+      create:
+        success: "Тест успешно создан"
+      form:
+        link_to_tests: "<< Тесты"
+      edit:
+        header: "Редактировать тест '%{test_title}'"
+        link_to_test: "К тесту"
+      update:
+        success: "Тест обновлен"
+      show:
+        header: "Тест: %{test_title}"
+        number_of_questions: "Количество вопросов: %{number}"
+        category: "Категория: %{category}"
+        level: "Уровень сложности: %{level}"
+        subheader: "Вопросы теста:"
+        link_to_new_question: "Новый вопрос"
+        table_header:
+          id: "Id"
+          body: "Тело вопроса"
+        link_to_tests: "<< Тесты"
+      destroy:
+        success: "Тест удален"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибку"
+        other: "Обнаружено %{count} ошибки"
+
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень сложности"
+        category: "Категория"
+      question:
+        body: "Тело вопроса"
+      answer:
+        body: "Тело ответа"
+
+  helpers:
+    label:
+      test:
+        title: "Название"
+        level: "Уровень сложности"
+        category_id: "Категория"

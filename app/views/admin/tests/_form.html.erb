@@ -2,14 +2,20 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', obj: @test %>
   <div class="actions">
-    <%= form.label :title %><br>
-    <%= form.text_field :title, id: :test_title %><br>
-    <%= form.label :level %><br>
-    <%= form.number_field :level, id: :test_level %><br>
-    <%= form.label :Category %><br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, id: :test_title %>
+    </p>
+    <p>
+      <%= form.label :level %><br>
+      <%= form.number_field :level, id: :test_level %>
+    </p>
+    <p>
+      <%= form.label :category_id %>
+      <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    </p>
     <%= form.submit %>
   </div>
 <% end %><br>
 
-<%= link_to '<< Tests', admin_tests_path %>
+<%= link_to "#{t('.link_to_tests')}", admin_tests_path %>

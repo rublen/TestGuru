@@ -7,8 +7,7 @@ class Test < ApplicationRecord
 
   validates :level, numericality: {
     only_integer: true,
-    greater_than: 0,
-    message: 'should be a nutural number'
+    greater_than: 0
   }
   validates :title, presence: true, uniqueness: {
     scope: :level,

@@ -1,0 +1,66 @@
+en:
+  tests:
+    test:
+      start: 'Start'
+    index:
+      header: "Available Tests"
+      table_header:
+        id: "Id"
+        title: "Title"
+        category: "Category"
+        number_of_questions: "Number of questions"
+        actions: "Action"
+
+  admin:
+    nav:
+      welcome: "Welcome"
+    tests:
+      index:
+        header: "Available Tests"
+        table_header:
+          id: "Id"
+          title: "Title"
+          category: "Category"
+          number_of_questions: "Number of questions"
+          actions: "Actions"
+        new_test: "New Test"
+      new:
+        header: "Create New Test"
+      create:
+        success: "The test was successfully created."
+      form:
+        link_to_tests: "<< Tests"
+      edit:
+        header: "Edit Test '%{test_title}'"
+        link_to_test: "Show Test"
+      update:
+        success: "The test was successfully updated."
+      show:
+        header: "Test: %{test_title}"
+        number_of_questions: "Number of questions: %{number}"
+        category: "Category: %{category}"
+        level: "Level: %{level}"
+        subheader: "Questions:"
+        link_to_new_question: "New Question"
+        table_header:
+          id: "Id"
+          body: "Body"
+        link_to_tests: "<< Tests"
+      destroy:
+        success: "The test was successfully deleted"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  helpers:
+    label:
+        test:
+          title: "Title"
+          level: "Level"
+          category_id: "Category"
+    submit:
+          create: "Create Test"
+          update: "Update Test"

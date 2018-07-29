@@ -1,0 +1,79 @@
+uk:
+  tests:
+    test:
+      start: 'Почати'
+    index:
+      header: "Доступні тести"
+      table_header:
+        id: "Id"
+        title: "Назва"
+        category: "Категорія"
+        number_of_questions: "Кількість питань"
+        actions: "Дія"
+  admin:
+    nav:
+      welcome: "Привіт"
+    tests:
+      index:
+        header: "Доступні тести"
+        table_header:
+          id: "Id"
+          title: "Назва"
+          category: "Категорія"
+          number_of_questions: "Кількість питань"
+          actions: "Дії"
+        new_test: "Новий тест"
+      new:
+        header: "Створити новий тест"
+      create:
+        success: "Тест успішно створено"
+      form:
+        link_to_tests: "<< Тести"
+      edit:
+        header: "Редагувати тест '%{test_title}'"
+        link_to_test: "Перегляд тесту"
+      update:
+        success: "Тест оновлено"
+      show:
+        header: "Тест: %{test_title}"
+        number_of_questions: "Кількість питань: %{number}"
+        category: "Категорія: %{category}"
+        level: "Рівень складності: %{level}"
+        subheader: "Питання тесту:"
+        link_to_new_question: "Нове питання"
+        table_header:
+          id: "Id"
+          body: "Зміст питання"
+        link_to_tests: "<< Тести"
+      destroy:
+        success: "Тест видалено"
+
+  shared:
+    errors:
+      header:
+        few: "Виявлено %{count} помилки"
+        many: "Виявлено %{count} помилок"
+        one: "Виявлено %{count} помилку"
+        other: "Виявлено %{count} помилки"
+
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Питання"
+      answer: "Відповідь"
+    attributes:
+      test:
+        title: "Назва"
+        level: "Рівень складності"
+        category: "Категорія"
+      question:
+        body: "Зміст"
+      answer:
+        body: "Зміст"
+
+    helpers:
+      label:
+        test:
+          title: "Назва"
+          level: "Рівень складності"
+          category_id: "Категорія"

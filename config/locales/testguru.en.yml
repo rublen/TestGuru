@@ -57,10 +57,8 @@ en:
 
   helpers:
     label:
-        test:
-          title: "Title"
-          level: "Level"
-          category_id: "Category"
-    submit:
-          create: "Create Test"
-          update: "Update Test"
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+

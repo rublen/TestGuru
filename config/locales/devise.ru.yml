@@ -6,10 +6,9 @@ ru:
         last_name: "Фамилия"
         password: "Пароль"
         password_confirmation: "Подтверджение пароля"
-
-  helpers:
-    submit:
-      create: "Зарегистрироваться"
+        remember_me: "Запомнить меня"
+    models:
+      user: "Пользователь"
 
   devise:
     confirmations:
@@ -40,8 +39,17 @@ ru:
         message_else: "Мы обращаемся к Вам, чтобы сообщить о том, что ваш адрес електронной почты изменился на %{email}."
         subject: "Адресу електронної пошти змінено"
       reset_password_instructions:
+        action: "Изменение пароля"
+        greeting: "Добрый день, %{recipient}!"
+        instruction: "Подан запрос на изменение Вашего пароля, Вы можете подтвердить эту замену через ссылку ниже:"
+        instruction_2: "Если Вы не делали запрос на изменение пароля - проигнорируйте это сообщение."
+        instruction_3: "Ваш пароль не иззменится, пока Вы не перейдете по ссылке выше и не создадите новый."
         subject: "Инструкции по восстановлению пароля"
       unlock_instructions:
+        action: "Розблокировать мою учетную запись"
+        greeting: "Добрый день, %{recipient}!"
+        instruction: "Перейдите по нижеприведенной ссылке, чтобы розблокировать учетную запись:"
+        message: "Ваша учётная запись была заблокирована в связи с большим количеством неудачных попыток входа."
         subject: "Инструкции по разблокировке учётной записи"
       password_change:
         greeting: "Добрій день, %{recipient}!"
@@ -69,7 +77,7 @@ ru:
         we_need_your_current_password_to_confirm_your_changes: "введіть свій поточний пароль для підтвердження змін"
       new:
         title: "Стань Guru"
-        sign_up: "ЗарегистрироватьсяІ"
+        sign_up: "Зарегистрироваться"
         minimum_password_length:
           few: "(минимум %{count} символа)"
           many: "(минимум %{count} символов)"
@@ -86,7 +94,8 @@ ru:
 
     sessions:
       new:
-        title: "Enter the Guru Gates"
+        title: "Войти в Guru Gates"
+        sign_in: "Войти"
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."
 
@@ -117,4 +126,3 @@ ru:
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
-

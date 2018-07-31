@@ -1,4 +1,3 @@
----
 uk:
   activerecord:
     errors:
@@ -134,24 +133,24 @@ uk:
     format: "%{attribute} %{message}"
     messages:
       accepted: має бути прийнятий
-      blank: не може бути пустим
+      blank: не може бути порожнім полем
       present: має бути пустим
       confirmation: не збігається з підтвердженням
-      empty: не може бути порожнім
+      empty: не може бути порожнім полем
       equal_to: має дорівнювати %{count}
       even: має бути парним
       exclusion: зарезервовано
-      greater_than: має бути більше ніж %{count}
-      greater_than_or_equal_to: має бути більше ніж або дорівнювати %{count}
+      greater_than: має бути більше, ніж %{count}
+      greater_than_or_equal_to: має бути більше або дорівнювати %{count}
       inclusion: не включено до переліку
       invalid: недійсний
-      less_than: має бути менше ніж %{count}
-      less_than_or_equal_to: має бути менше ніж або дорівнювати %{count}
+      less_than: має бути менше, ніж %{count}
+      less_than_or_equal_to: має бути менше або дорівнювати %{count}
       model_invalid: 'Виникли помилки: %{errors}'
       not_a_number: не число
-      not_an_integer: не э цілим числом
+      not_an_integer: не є цілим числом
       odd: має бути непарним
-      required: не може бути порожнім
+      required: не може бути порожнім полем
       taken: вже зайнятий
       too_long:
         few: занадто довгий (максимум %{count} знаки)
@@ -216,7 +215,7 @@ uk:
           quadrillion:
             few: Квадрильйонів
             many: Квадрильйонів
-            one: Кквадрильйон
+            one: Квадрильйон
             other: Квадрильйонів
           thousand:
             few: Тисяч

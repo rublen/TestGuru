@@ -1,14 +1,14 @@
-<h1>List of Tests</h1>
+<h1><%= t('.header') %></h1>
 
 <table style='border-spacing: 5px;'>
   <tr >
-    <th style='border-bottom: 1pt solid black'>id</th>
-    <th style='border-bottom: 1pt solid black'>Title</th>
-    <th style='border-bottom: 1pt solid black'>Category</th>
-    <th style='border-bottom: 1pt solid black'>Number of questions</th>
-    <th style='border-bottom: 1pt solid black' colspan='4'>Actions</th>
+    <th style='border-bottom: 1pt solid black'><%= t('.table_header.id') %></th>
+    <th style='border-bottom: 1pt solid black'><%= t('.table_header.title') %></th>
+    <th style='border-bottom: 1pt solid black'><%= t('.table_header.category') %></th>
+    <th style='border-bottom: 1pt solid black'><%= t('.table_header.number_of_questions') %></th>
+    <th style='border-bottom: 1pt solid black' colspan='4'><%= t('.table_header.actions') %></th>
   </tr>
   <%= render @tests %>
 </table><br>
 
-<%= link_to 'New test', new_admin_test_path(@test) %><br>
+<%= link_to t('.new_test'), new_admin_test_path(@test) %><br>

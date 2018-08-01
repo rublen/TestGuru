@@ -1,3 +1,5 @@
-<h1><%= t('.header', test_title: @test.title) %></h1>
-<%= render 'form' %>
-<%= link_to t('.link_to_test'), admin_test_path(@test) %>
+<div class="container mt-3">
+  <h1><%= t('.header', test_title: @test.title) %></h1>
+  <%= render 'form' %>
+  <%= link_to t('.link_to_test'), admin_test_path(@test) %>
+</div>

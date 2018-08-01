@@ -1,13 +1,20 @@
-<p class='nav user'>
+<nav class="navbar navbar-light bg-light" role="navigation">
+  <div class="container-fluid">
+    <span>
+      <%= link_to 'TestGuru', root_path, class: "navbar-brand" %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to "Admin Panel", admin_tests_path, class: "navbar-brand" %>
+      <% end %>
+    </span>
 
-  <%= link_to 'TestGuru', root_path %> |
-
-  <% if user_signed_in? %>
-      Welcome, <b><%= current_user.first_name || current_user.email %>!</b> |
-      <%= link_to 'logout', destroy_user_session_path, method: :delete %><br>
-  <% else %>
-    <%= link_to 'signup', new_user_registration_path %> |
-    <%= link_to 'login', new_user_session_path %>
-  <% end %>
-
-</p>
+    <span class="navbar-text">
+      <% if user_signed_in? %>
+        Welcome, <b><%= current_user.first_name || current_user.email %>!</b> |
+        <%= link_to 'logout', destroy_user_session_path, method: :delete %><br>
+      <% else %>
+        <%= link_to 'signup', new_user_registration_path %> |
+        <%= link_to 'login', new_user_session_path %>
+      <% end %>
+    </span>
+  </div>
+</nav>

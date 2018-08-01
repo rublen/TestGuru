@@ -2,7 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 author = User.create!(email: 'author@mail.com', password: 'author')
-user = User.create!(email: 'user@mail.com', password: 'user')
+user = User.create!(email: 'user@mail.com', password: 'user11')
 
 categories = Category.create! [{title: 'Ruby'}, {title: 'Ruby on Rails'}, {title: 'HTML'}, {title: 'JS'}]
 

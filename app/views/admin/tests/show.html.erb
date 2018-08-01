@@ -1,18 +1,22 @@
-<h2><%= t('.header', test_title: @test.title) %></h2>
-<p><%= t('.number_of_questions', number: @test.questions.count) %> |
-   <%= t('.category', category: @test.category.title) %> |
-   <%= t('.level', level: @test.level) %>
-</p>
-<p><%= link_to t('.link_to_new_question'), new_admin_test_question_path(@test) %></p>
-<h3><%= t('.subheader') %></h3>
+<div class="container mt-3">
 
+  <h2><%= t('.header', test_title: @test.title) %></h2>
 
-<table style='border-spacing: 5px;'>
-  <tr >
-    <th style='border-bottom: 1pt solid black'><%= t('.table_header.id') %></th>
-    <th style='border-bottom: 1pt solid black'><%= t('.table_header.body') %></th>
-  </tr>
-  <%= render partial: 'admin/questions/question', collection: @test.questions %>
-</table><br>
+  <p><%= t('.number_of_questions', number: @test.questions.count) %> |
+     <%= t('.category', category: @test.category.title) %> |
+     <%= t('.level', level: @test.level) %>
+  </p>
 
-<%= link_to t('.link_to_tests'), admin_tests_path %>
+  <h3><%= t('.subheader') %></h3>
+
+  <table class="table table-hover">
+    <tr >
+      <th style='border-bottom: 1pt solid black'><%= t('.table_header.id') %></th>
+      <th style='border-bottom: 1pt solid black'><%= t('.table_header.body') %></th>
+    </tr>
+    <%= render partial: 'admin/questions/question', collection: @test.questions %>
+  </table>
+
+  <p><%= link_to t('.link_to_new_question'), new_admin_test_question_path(@test) %></p>
+  <p><%= link_to t('.link_to_tests'), admin_tests_path %></p>
+</div>

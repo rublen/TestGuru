@@ -1,18 +1,25 @@
-<h1>You're doing <%= @test_passage.test.title %> test</h1>
-<b>
-  Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}: #{@test_passage.current_question.body}" %>
-</b>
+<div class="container mt-5">
+  <h3 align="center">You're doing <%= @test_passage.test.title %> test</h3><br>
+  <div class="row justify-content-center mt-3">
+    <div class="col col-md-4">
+      <h5>Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}: "%></h5>
+      <p><b><%= "#{@test_passage.current_question.body}" %></b></p>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers,
-      :id, :body, include_hidden: false do |b| %>
-      <p>
-        <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-        <%= b.label %>
-      </p>
-    <% end %>
+      <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+        <div class="form-group">
+          <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers,
+            :id, :body, include_hidden: false do |b| %>
+            <p>
+              <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+              <%= b.label %>
+            </p>
+          <% end %>
 
-    <p>
-      <%= form.submit 'Next' %>
-    </p>
-  <% end %>
+          <p>
+            <%= form.submit 'Next' %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

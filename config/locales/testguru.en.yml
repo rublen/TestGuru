@@ -1,4 +1,8 @@
 en:
+  services:
+    gist_question_srvice:
+      description: "A question about %{test_title} from TestGuru"
+
   tests:
     test:
       start: 'Start'

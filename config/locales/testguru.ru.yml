@@ -1,4 +1,8 @@
 ru:
+  services:
+    gist_question_srvice:
+      description: "Вопрос по теме '%{test_title}' от TestGuru"
+
   tests:
     test:
       start: 'Начать'
@@ -10,6 +14,7 @@ ru:
         category: "Категория"
         number_of_questions: "Количество вопросов"
         actions: "Действие"
+
   admin:
     nav:
       welcome: "Привет"

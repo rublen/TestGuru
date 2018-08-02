@@ -1,4 +1,8 @@
 uk:
+  services:
+    gist_question_srvice:
+      description: "Питання з теми '%{test_title}' від TestGuru"
+
   tests:
     test:
       start: 'Почати'

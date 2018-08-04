@@ -12,7 +12,7 @@ module TestGuru
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.time_zone = 'Kyiv'
-    config.autoload_paths << "#{Rails.root}/lib/clients?lang=uk"
+    config.autoload_paths << "#{Rails.root}/lib/clients"
     # config.i18n.default_locale = :uk
 
     # Settings in config/environments/* take precedence over those specified here.

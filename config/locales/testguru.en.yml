@@ -3,6 +3,12 @@ en:
     gist_question_srvice:
       description: "A question about %{test_title} from TestGuru"
 
+  test_passages:
+    gist:
+      success: "Gist was successfully saved "
+      failure: "Some error has occurred during creating the gist "
+      url_html: "<a href='%{url}'>your_gist</a>"
+
   tests:
     test:
       start: 'Start'

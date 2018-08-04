@@ -1,5 +1,7 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  attr_reader :client
+
+  def initialize(question, client: Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']))
     @question = question
     @test = @question.test
     @client = client || GitHubClient.new

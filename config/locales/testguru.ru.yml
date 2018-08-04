@@ -3,6 +3,12 @@ ru:
     gist_question_srvice:
       description: "Вопрос по теме '%{test_title}' от TestGuru"
 
+  test_passages:
+    gist:
+      success: "Gist был успешно сохранен "
+      failure: "Во время сохранения gist произошла ошибка"
+      url_html: "<a href='%{url}'>Ваш_gist</a>"
+
   tests:
     test:
       start: 'Начать'

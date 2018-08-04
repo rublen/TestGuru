@@ -3,6 +3,12 @@ uk:
     gist_question_srvice:
       description: "Питання з теми '%{test_title}' від TestGuru"
 
+  test_passages:
+    gist:
+      success: "Gist успішно збережено "
+      failure: "Під час створення gist виникла помилка"
+      url_html: "<a href='%{url}'>Ваш_gist</a>"
+
   tests:
     test:
       start: 'Почати'

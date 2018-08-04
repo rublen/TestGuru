@@ -1,7 +1,7 @@
 <% flash.each do |key, message| %>
   <% alert_class = key == 'alert' ? 'danger' : 'success' %>
   <%= content_tag :div, class: "alert alert-#{alert_class}", role: "alert" do %>
-    <%= message %>
+    <%= message.html_safe %>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <% end %>
 <% end %>

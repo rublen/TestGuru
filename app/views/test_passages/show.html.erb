@@ -1,8 +1,13 @@
 <div class="container mt-5">
-  <h3 align="center">You're doing <%= @test_passage.test.title %> test</h3><br>
+  <h3 align="center">
+    You're doing the <%= @test_passage.test.title %> test<br>
+    <h5 align="center">
+      Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}: "%>
+    </h5>
+  </h3>
+
   <div class="row justify-content-center mt-3">
     <div class="col col-md-4">
-      <h5>Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}: "%></h5>
       <p><b><%= "#{@test_passage.current_question.body}" %></b></p>
 
       <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
@@ -14,6 +19,10 @@
               <%= b.label %>
             </p>
           <% end %>
+
+          <p>
+            <%= link_to "Gist Question", gist_test_passage_path(@test_passage), method: :post %>
+          </p>
 
           <p>
             <%= form.submit 'Next' %>

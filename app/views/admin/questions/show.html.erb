@@ -1,25 +1,29 @@
-<h3>Question: <%= @question.body%></h3>
-<p>
-  id: <%= @question.id %> |
-  Number of answers: <%= @question.answers.size %>
-</p>
+<div class="container mt-3">
+  <h3>Question: <%= @question.body%></h3>
+  <p>
+    id: <%= @question.id %> |
+    Number of answers: <%= @question.answers.size %>
+  </p>
 
-<h3>Answers:</h3>
-<%= link_to 'New answer', new_admin_question_answer_path(@question) %><br>
-<table style='border-spacing: 5px;'>
-  <tr >
-    <th style='border-bottom: 1pt solid black'>id</th>
-    <th style='border-bottom: 1pt solid black'>Body</th>
-  </tr>
-  <%= render @question.answers %>
-</table><br>
+  <h3>Answers:</h3>
+  <%= link_to 'New answer', new_admin_question_answer_path(@question) %><br>
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr style='border-bottom: 1pt solid black'>
+        <th>Id</th>
+        <th>Body</th>
+      </tr>
+    </thead>
+    <%= render @question.answers %>
+  </table><br>
 
-<p>
-  <%= link_to '<<Tests', admin_tests_path %> |
-  <%= link_to 'Edit', edit_admin_question_path(@question) %> |
-  <%= link_to 'Delete', [:admin, @question],
-    method: :delete,
-    data: { confirm: 'Are you sure?' }
-  %> |
-  <%= link_to 'Back', admin_test_path(@question.test) %>
-</p>
+  <p>
+    <%= link_to '<<Tests', admin_tests_path %> |
+    <%= link_to 'Edit', edit_admin_question_path(@question) %> |
+    <%= link_to 'Delete', [:admin, @question],
+      method: :delete,
+      data: { confirm: 'Are you sure?' }
+    %> |
+    <%= link_to 'Back', admin_test_path(@question.test) %>
+  </p>
+</div>

@@ -34,8 +34,8 @@ class TestPassagesController < AuthenticatedController
 
   def gist_params
     {
-      user_id: current_user.id,
-      question_id: @test_passage.current_question.id,
+      user: current_user,
+      question: @test_passage.current_question,
       gist_url: @result.gist_url
     }
   end

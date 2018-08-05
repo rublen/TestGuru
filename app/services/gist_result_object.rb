@@ -1,17 +1,17 @@
 class GistResultObject
-  attr_reader :result, :service
 
-  def initialize(question)
-    @service = GistQuestionService.new(question)
-    @result = @service.call
+  def initialize(client, result)
+    @client = client
+    @result = result
   end
 
   def success?
-    @service.client.is_a?(GitHubClient) ? @result.success? : !@result.blank?
+    @client.is_a?(GitHubClient) ? @result.success? : !@result.blank?
   end
 
   def gist_url
-    @service.client.is_a?(Octokit::Client) ? @result.html_url : "getting url wasn't implemented for client #{@service.client.class}"
+    @client.is_a?(Octokit::Client) ? @result.html_url : "getting url wasn't implemented for client #{@client.class}"
   end
 
 end
+

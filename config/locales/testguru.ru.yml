@@ -1,13 +1,12 @@
 ru:
   services:
-    gist_question_srvice:
+    gist_question_service:
       description: "Вопрос по теме '%{test_title}' от TestGuru"
 
   test_passages:
     gist:
-      success: "Gist был успешно сохранен "
+      success_html: "Gist был успешно сохранен: <a href='%{url}' target='_blank'>your_gist</a>"
       failure: "Во время сохранения gist произошла ошибка"
-      url_html: "<a href='%{url}'>Ваш_gist</a>"
 
   tests:
     test:

@@ -16,15 +16,15 @@ class TestPassagesController < AuthenticatedController
   def result; end
 
   def gist
-    @result = GistResultObject.new(@test_passage.current_question)
+    @result = GistQuestionService.new(@test_passage.current_question).call
 
-    flash_options = if @result.success? && Gist.new(gist_params).save!
-      { notice: "#{t('.success')}: #{t('.url_html', url: @result.gist_url)}" }
+    if @result.success? && Gist.new(gist_params).save!
+      flash[:notice] = "#{t('.success_html', url: @result.gist_url)}"
     else
-      { alert: t('.failure') }
+      flash[:alert] = t('.failure')
     end
 
-    redirect_to @test_passage, flash_options
+    redirect_to @test_passage
   end
 
   private

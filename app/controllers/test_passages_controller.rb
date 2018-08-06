@@ -18,8 +18,9 @@ class TestPassagesController < AuthenticatedController
   def gist
     @result = GistQuestionService.new(@test_passage.current_question).call
 
-    if @result.success? && Gist.new(gist_params).save!
-      flash[:notice] = "#{t('.success_html', url: @result.gist_url)}"
+    if @result.success?
+      flash[:notice] = t('.success_html', url: @result.gist_url)
+      Gist.new(gist_params).save!
     else
       flash[:alert] = t('.failure')
     end

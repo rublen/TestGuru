@@ -3,21 +3,20 @@ document.addEventListener('turbolinks:load', function() {
   if (control) {
     var password = control.querySelector('.pass1').value
     var confirmation_elem = control.querySelector('.pass2')
-
-    if(confirmation_elem.value) {
-      confirmation_elem.addEventListener('input', validate())
-    }
+    confirmation_elem.addEventListener('input', validate(control, password))
+    // confirmation_elem.oninput = validate(control)
   }
 })
 
-function validate() {
-  var confirmation = confirmation_elem.value
+function validate(form, password) {
+  var confirmation = form.querySelector('.pass2').value
   var len = confirmation.length
+  if(!len) { return }
   if(password[len-1] === confirmation[len-1]) {
-    this.querySelector('.octicon-check').classList.remove('hide')
-    this.querySelector('.octicon-circle-slash').classList.add('hide')
+    form.querySelector('.octicon-check').classList.remove('hide')
+    form.querySelector('.octicon-circle-slash').classList.add('hide')
   } else {
-    this.querySelector('.octicon-circle-slash').classList.remove('hide')
-    this.querySelector('.octicon-check').classList.add('hide')
+    form.querySelector('.octicon-check').classList.add('hide')
+    form.querySelector('.octicon-circle-slash').classList.remove('hide')
   }
 }

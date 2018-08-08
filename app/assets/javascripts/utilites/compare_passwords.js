@@ -3,7 +3,7 @@ document.addEventListener('turbolinks:load', function() {
   
   if (control) {
     var confirmation_elem = control.querySelector('#user_password_confirmation')
-    confirmation_elem.addEventListener("change", validate)
+    confirmation_elem.addEventListener("input", validate)
   }
 })
 

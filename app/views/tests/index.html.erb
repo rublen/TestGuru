@@ -5,7 +5,11 @@
     <thead class="thead-light">
       <tr style='border-bottom: 1pt solid black'>
         <th><%= t('.table_header.id') %></th>
-        <th><%= t('.table_header.title') %></th>
+        <th class="sort-by-title pointer">
+          <%= t('.table_header.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
         <th><%= t('.table_header.category') %></th>
         <th style="text-align: center"><%= t('.table_header.number_of_questions') %></th>
         <th><%= t('.table_header.actions') %></th>

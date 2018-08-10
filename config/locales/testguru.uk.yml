@@ -56,6 +56,8 @@ uk:
         link_to_tests: "<< Тести"
       destroy:
         success: "Тест видалено"
+      form_inline: 
+          submit: 'Ok'
 
   shared:
     errors:

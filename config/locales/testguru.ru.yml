@@ -57,6 +57,8 @@ ru:
         link_to_tests: "<< Тесты"
       destroy:
         success: "Тест удален"
+      form_inline: 
+          submit: 'Ok'
 
   shared:
     errors:

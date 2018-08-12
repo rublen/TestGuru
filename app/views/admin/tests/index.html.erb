@@ -1,6 +1,8 @@
 <div class="container mt-3">
   <h1><%= t('.header') %></h1>
-
+  
+  <%= render 'shared/errors', obj: @test %>
+  
   <table class="table table-hover">
     <thead class="thead-light">
       <tr style='border-bottom: 1pt solid black'>
@@ -15,7 +17,9 @@
         <th colspan='4' style="text-align: center"><%= t('.table_header.actions') %></th>
       </tr>
     </thead>
+    
   <%= render @tests %>
+  
   </table><br>
 
   <%= link_to t('.new_test'), new_admin_test_path(@test) %><br>

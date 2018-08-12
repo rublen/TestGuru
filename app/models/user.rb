@@ -6,8 +6,8 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :trackable,
-         :validatable#,
-        # :confirmable
+         :validatable,
+        :confirmable
 
   has_many :test_passages
   has_many :tests, through: :test_passages

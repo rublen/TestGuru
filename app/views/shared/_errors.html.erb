@@ -1,4 +1,4 @@
-<% if obj && obj.errors.present? %>
+<% if obj&.errors.present? %>
   <div class="resource-errors" data-resource-id="<%= obj.id %>">
     <h3 style='color:Red'>
       <%= t('.header', count: obj.errors.full_messages.size) %>

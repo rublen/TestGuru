@@ -1,10 +1,16 @@
 <nav class="navbar navbar-dark bg-dark" role="navigation">
   <div class="container-fluid">
     <span class="navbar-brand">
-      <%= link_to "TestGuru", root_path, class: "navbar-brand" %> Admin Panel
+      <%= link_to "⮈TestGuru", root_path, class: "navbar-brand" %> Admin Panel
     </span>
 
     <span class="navbar-text">
+      <select class="selectlang" data-width="fit">
+        <option value='en'>en</option>
+        <option value='uk'>ua</option>
+        <option value='ru'>ru</option>
+      </select>
+
       <%= t('.welcome') %>, <b class="nav-admin user-email"><%= current_user.first_name %></b>
       Guru | <%= link_to "logout", destroy_user_session_path, method: :delete %>
     </span>

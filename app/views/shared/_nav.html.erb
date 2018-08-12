@@ -1,13 +1,19 @@
-<nav class="navbar navbar-light bg-light" role="navigation">
+<nav class="navbar navbar-light" style="background-color: #f0f0f0;" role="navigation">
   <div class="container-fluid">
     <span>
-      <%= link_to 'TestGuru', root_path, class: "navbar-brand" %>
+      <%= link_to '⮈TestGuru', root_path, class: "navbar-brand" %>
       <% if user_signed_in? && current_user.admin? %>
-        <%= link_to "Admin Panel", admin_tests_path, class: "navbar-brand" %>
+        <%= link_to "⮈Admin Panel", admin_tests_path, class: "navbar-brand" %>
       <% end %>
     </span>
 
     <span class="navbar-text">
+      <select class="selectlang" data-width="fit">
+        <option value='en'>en</option>
+        <option value='uk'>ua</option>
+        <option value='ru'>ru</option>
+      </select>
+
       <% if user_signed_in? %>
         Welcome, <b><%= current_user.first_name || current_user.email %>!</b> |
         <%= link_to 'logout', destroy_user_session_path, method: :delete %><br>

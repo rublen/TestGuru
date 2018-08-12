@@ -1,5 +1,7 @@
-<h1>Test <%= @test_passage.test.title %> has been completed</h1>
+<div class="container mt-5">
+  <h1>Test <%= @test_passage.test.title %> has been completed</h1>
 
-<%= test_result(@test_passage) %>
+  <%= test_result(@test_passage) %>
 
-<%= link_to '<< Tests', tests_path %>
+  <%= link_to '<< Tests', tests_path %>
+</div>

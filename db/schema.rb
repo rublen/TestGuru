@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20180812164509) do
     t.datetime "updated_at", null: false
     t.integer "current_question_id"
     t.integer "question_counter", default: 1, null: false
-    t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
+    t.index ["current_question_id"], name: "index_test_passages_on_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
   end

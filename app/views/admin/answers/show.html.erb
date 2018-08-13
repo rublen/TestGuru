@@ -1,7 +1,8 @@
-<h2>Question: <%= @answer.question.body %></h2>
+<div class="container mt-3">
+  <h3>Question: <%= @answer.question.body %></h3>
+  <h2>Answer: <%= @answer.body %></h2>
+  <p>Correctness: <%= @answer.correct %></p>
 
-<h1>Answer: <%= @answer.body %></h1>
-<p>Correctness: <%= @answer.correct %></p>
-
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+  <%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
+  <%= link_to 'Back', admin_question_path(@answer.question) %>
+</div>

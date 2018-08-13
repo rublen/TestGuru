@@ -3,25 +3,27 @@
 
   <%= render 'shared/errors', obj: @test %>
 
-  <table class="table table-hover">
-    <thead class="thead-light">
-      <tr style='border-bottom: 1pt solid black'>
-        <th class="align-middle"><%= t('.table_header.id') %></th>
-        <th class="sort-by-title pointer align-middle" colspan="2" style="text-align: center">
-          <%= t('.table_header.title') %>
-          <%= octicon 'arrow-up', class: 'text-success hide' %>
-          <%= octicon 'arrow-down', class: 'text-success hide' %>
-        </th>
-        <th class="align-middle"><%= t('.table_header.category') %></th>
-        <th style="text-align: center" class="align-middle"><%= t('.table_header.number_of_questions') %></th>
-        <th colspan="3" style="text-align: center" class="align-middle"><%= t('.table_header.actions') %></th>
-      </tr>
-    </thead>
+  <div class="container">
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr style='border-bottom: 1pt solid black'>
+          <th class="align-middle"><%= t('.table_header.id') %></th>
+          <th class="sort-by-title pointer align-middle" colspan="2" style="text-align: center">
+            <%= t('.table_header.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th class="align-middle"><%= t('.table_header.category') %></th>
+          <th style="text-align: center" class="align-middle"><%= t('.table_header.number_of_questions') %></th>
+          <th colspan="3" style="text-align: center" class="align-middle"><%= t('.table_header.actions') %></th>
+        </tr>
+      </thead>
+      <%= render @tests %>
+    </table>
+   </div>
 
-  <%= render @tests %>
-
-  </table><br>
-
-  <%= link_to t('.new_test'), new_admin_test_path(@test) %><br>
-  <%= link_to 'Gists', admin_gists_path %>
+  <div class="container">
+    <%= link_to t('.new_test'), new_admin_test_path(@test) %><br>
+    <%= link_to 'Gists', admin_gists_path %>
+  </div>
 </div>

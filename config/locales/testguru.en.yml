@@ -33,7 +33,7 @@ en:
           number_of_questions: "Number of questions"
           actions: "Actions"
         new_test: "New Test"
-        
+
       new:
         header: "Create New Test"
       create:
@@ -58,7 +58,7 @@ en:
         link_to_tests: "<< Tests"
       destroy:
         success: "The test was successfully deleted"
-      form_inline: 
+      form_inline:
           submit: 'Ok'
 
   shared:
@@ -73,4 +73,3 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
-

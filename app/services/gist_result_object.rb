@@ -6,7 +6,8 @@ class GistResultObject
   end
 
   def success?
-    @client.is_a?(GitHubClient) ? @result.success? : !@result.blank?
+    !@result.blank?
+    # @client.is_a?(GitHubClient) ? @result.success? : !@result.blank?
   end
 
   def gist_url
@@ -14,4 +15,3 @@ class GistResultObject
   end
 
 end
-

@@ -27,13 +27,18 @@ function sortRowsByTitle() {
 
   // create and fill new html-table
   var sortedTable = document.createElement('table');
-  sortedTable.classList.add('table table-hover');
-  sortedTable.appendChild(rows[0]);
-  sortedTable[0].classList.add('thead-light')
+  sortedTable.classList.add('table', 'table-hover');
+
+  var thead = document.createElement('thead');
+  thead.classList.add('thead-light');
+
+  thead.appendChild(rows[0]);
+  sortedTable.appendChild(thead);
 
   for(var i = 0; i < sortedRows.length; i++) {
     sortedTable.appendChild(sortedRows[i]);
   };
+
   table.parentNode.replaceChild(sortedTable, table);
 };
 

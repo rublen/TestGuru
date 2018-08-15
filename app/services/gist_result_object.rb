@@ -1,3 +1,5 @@
+require 'lib/clients/git_hub_client'
+
 class GistResultObject
 
   def initialize(client, result)
@@ -6,8 +8,7 @@ class GistResultObject
   end
 
   def success?
-    !@result.blank?
-    # @client.is_a?(GitHubClient) ? @result.success? : !@result.blank?
+    @client.is_a?(GitHubClient) ? @result.success? : !@result.blank?
   end
 
   def gist_url

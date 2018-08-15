@@ -1,3 +1,5 @@
+require 'lib/clients/git_hub_client'
+
 class GistResultObject
 
   def initialize(client, result)
@@ -14,4 +16,3 @@ class GistResultObject
   end
 
 end
-

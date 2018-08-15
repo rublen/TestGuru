@@ -1,17 +1,15 @@
-<div class="container">
   <%= content_tag :div, class: "progress",
-                        data: { 
+                        data: {
                           question_counter: "#{@test_passage.question_counter}",
-                          questions_amount: "#{@test_passage.test.questions.count}" 
+                          questions_amount: "#{@test_passage.test.questions.count}"
                         } do %>
-      
+
     <%= content_tag :div, class: 'progress-bar progress-bar-info progress-bar-striped',
                           role: "progressbar",
                           aria_valuemin: "0",
-                          aria_valuemax: "100" do %> 
+                          aria_valuemax: "100" do %>
     <% end %>
   <% end %>
-</div>
 
 <div class="container mt-5">
   <h3 align="center">

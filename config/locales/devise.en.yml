@@ -9,10 +9,6 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
 
-  helpers:
-    submit:
-      create: "Sign Up"
-
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

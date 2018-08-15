@@ -12,7 +12,7 @@ class GistQuestionService
 
   private
 
-  # Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']), GitHubClient.new
+  # Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']), Clients::GitHubClient.new
   def default_client
     Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end

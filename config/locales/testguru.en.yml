@@ -33,6 +33,7 @@ en:
           number_of_questions: "Number of questions"
           actions: "Actions"
         new_test: "New Test"
+        badges: "Badges"
 
       new:
         header: "Create New Test"
@@ -56,10 +57,47 @@ en:
           id: "Id"
           body: "Body"
         link_to_tests: "<< Tests"
+        link_to_edit_test: "Edit_test"
       destroy:
         success: "The test was successfully deleted"
       form_inline:
           submit: 'Ok'
+
+    badges:
+      badge:
+        body: "File"
+        criterion: "Criterion"
+      index:
+        header: "Badges Collection"
+        table_header:
+          id: "Id"
+          title: "Title"
+          body: "File"
+          criterion: "Criterion"
+          picture: "Picture"
+          actions: "Actions"
+        new_badge: "New badge"
+      new:
+        header: "Create new badge"
+        link_to_badges: "<<Badges"
+      create:
+        success: "Badge successfully created"
+      form:
+        link_to_badges: "<<Badges"
+      edit:
+        header: "Edit badge '%{badge_title}'"
+        link_to_badge: "Show_Badge"
+      update:
+        success: "Badge successfully updated"
+      show:
+        header: "Badge: %{badge_title}"
+        id: "Id"
+        body: "File of image"
+        picture: "Picture"
+        link_to_badges: "<<Badges"
+        link_to_edit: "Edit"
+      destroy:
+        success: "Badge successfully deleted"
 
   shared:
     errors:

@@ -33,6 +33,7 @@ ru:
           number_of_questions: "Количество вопросов"
           actions: "Действия"
         new_test: "Новый тест"
+        badges: "Бейджи"
       new:
         header: "Создать новый тест"
       create:
@@ -55,10 +56,47 @@ ru:
           id: "Id"
           body: "Тело вопроса"
         link_to_tests: "<< Тесты"
+        link_to_edit_test: "Редактировать"
       destroy:
         success: "Тест удален"
-      form_inline: 
+      form_inline:
           submit: 'Ok'
+
+    badges:
+      badge:
+        body: "Файл"
+        criterion: "Критерий"
+      index:
+        header: "Коллекция бейджей"
+        table_header:
+          id: "Id"
+          title: "Название"
+          body: "Файл"
+          criterion: "Критерий"
+          picture: "Изображение"
+          actions: "Действия"
+        new_badge: "Новый бейдж"
+      new:
+        header: "Создать новый бейдж"
+        link_to_badges: "<<Бейджи"
+      create:
+        success: "Бейдж успешно создан"
+      form:
+        link_to_badges: "<<Бейджи"
+      edit:
+        header: "Изменить бейдж '%{badge_title}'"
+        link_to_badge: "Просмотр бейджа"
+      update:
+        success: "Бейдж обновлен"
+      show:
+        header: "Бейдж: %{badge_title}"
+        id: "Id"
+        body: "Файл с изображением"
+        picture: "Изображение"
+        link_to_badges: "<<Бейджи"
+        link_to_edit: "Редактировать"
+      destroy:
+        success: "Бейдж удален"
 
   shared:
     errors:
@@ -73,6 +111,7 @@ ru:
       test: "Тест"
       question: "Вопрос"
       answer: "Ответ"
+      badge: "Бейдж"
     attributes:
       test:
         title: "Название"
@@ -82,6 +121,11 @@ ru:
         body: "Тело вопроса"
       answer:
         body: "Тело ответа"
+      badge:
+        title: "Название"
+        # body: "Файл с изображением"
+        criterion: "Критерий"
+
 
   helpers:
     label:

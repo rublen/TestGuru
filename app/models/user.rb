@@ -7,11 +7,12 @@ class User < ApplicationRecord
          :rememberable,
          :trackable,
          :validatable,
-        :confirmable
+         :confirmable
 
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test'
+  has_and_belongs_to_many :badges
 
   validates :email, presence: true,
                     uniqueness: true,
@@ -19,6 +20,16 @@ class User < ApplicationRecord
 
   def passed_tests_by_level(level)
     tests.where(level: level)
+  end
+
+  def passed_tests_by_scope(scope)
+    tests.send(scope).select do |test|
+      test.test_passages.any? { |tp| tp.score >= 80 }
+    end.uniq
+  end
+
+  def scope_completed?(scope)
+    passed_tests_by_scope(:elementary).count == Test.send(scope).count
   end
 
   def test_passage(test)

@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h1><%= t('.header', badge_title: @badge.title) %></h1>
+  <%= "ID: #{@badge.id} | #{t('.body')}: #{@badge.body}" %>
+  <%= image_tag(@badge.body, :alt => "Badges") %>
+
+  <%= link_to t('.link_to_badges'), admin_badges_path %> |
+  <%= link_to t('.link_to_edit'), edit_admin_badge_path(@badge) %>
+</div>

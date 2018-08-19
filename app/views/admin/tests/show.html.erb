@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-2">
 
   <h2><%= t('.header', test_title: @test.title) %></h2>
 
@@ -13,11 +13,14 @@
     <tr >
       <th style='border-bottom: 1pt solid black'><%= t('.table_header.id') %></th>
       <th style='border-bottom: 1pt solid black'><%= t('.table_header.body') %></th>
+      <th style='border-bottom: 1pt solid black'><%= t('.table_header.actions') %></th>
     </tr>
     <%= render partial: 'admin/questions/question', collection: @test.questions %>
   </table>
 
-  <p><%= link_to t('.link_to_new_question'), new_admin_test_question_path(@test) %></p>
-  <p><%= link_to 'Edit test', edit_admin_test_path(@test) %></p>
-  <p><%= link_to t('.link_to_tests'), admin_tests_path %></p>
+  <p>
+    <%= link_to t('.link_to_tests'), admin_tests_path %> |
+    <%= link_to t('.link_to_edit_test'), edit_admin_test_path(@test) %> |
+    <%= link_to t('.link_to_new_question'), new_admin_test_question_path(@test) %>
+  </p>
 </div>

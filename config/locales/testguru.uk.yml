@@ -32,6 +32,7 @@ uk:
           number_of_questions: "Кількість питань"
           actions: "Дії"
         new_test: "Новий тест"
+        badges: "Бейджі"
       new:
         header: "Створити новий тест"
       create:
@@ -54,10 +55,47 @@ uk:
           id: "Id"
           body: "Зміст питання"
         link_to_tests: "<< Тести"
+        link_to_edit_test: "Редагувати"
       destroy:
         success: "Тест видалено"
-      form_inline: 
+      form_inline:
           submit: 'Ok'
+
+    badges:
+      badge:
+        body: "Файл"
+        criterion: "Критерій"
+      index:
+        header: "Колекція бейджів"
+        table_header:
+          id: "Id"
+          title: "Назва"
+          body: "Файл"
+          criterion: "Критерій"
+          picture: "Зображення"
+          actions: "Дії"
+        new_badge: "Новий бейдж"
+      new:
+        header: "Створити новий бейдж"
+        link_to_badges: "<<Бейджі"
+      create:
+        success: "Бейдж успішно створено"
+      form:
+        link_to_badges: "<<Бейджі"
+      edit:
+        header: "Редагувати бейдж '%{badge_title}'"
+        link_to_badge: "Переглянути_бейдж"
+      update:
+        success: "Бейдж оновлено"
+      show:
+        header: "Бейдж: %{badge_title}"
+        id: "Id"
+        body: "Файл з зображенням"
+        picture: "Зображення"
+        link_to_badges: "<<Бейджі"
+        link_to_edit: "Редагувати"
+      destroy:
+        success: "Бейдж видалено"
 
   shared:
     errors:
@@ -72,6 +110,7 @@ uk:
       test: "Тест"
       question: "Питання"
       answer: "Відповідь"
+      badge: "Бейдж"
     attributes:
       test:
         title: "Назва"
@@ -81,6 +120,10 @@ uk:
         body: "Зміст"
       answer:
         body: "Зміст"
+      badge:
+        title: "Назва"
+        body: "Файл з зображенням"
+        criterion: "Критерій"
 
     helpers:
       label:

@@ -1,6 +1,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :user
+  # has_many :badges
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_question

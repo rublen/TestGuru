@@ -77,6 +77,8 @@ uk:
         new_badge: "Новий бейдж"
       new:
         header: "Створити новий бейдж"
+        available_criteria: 'Доступні критерії'
+        link_to_badges: "<<Бейджи"
         link_to_badges: "<<Бейджі"
       create:
         success: "Бейдж успішно створено"

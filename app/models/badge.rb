@@ -5,7 +5,12 @@ class Badge < ApplicationRecord
   validates :criterion, presence: true, uniqueness: true
 
   # criterion is one of: %w[well_done hundred first_attempt elementary intermediate advanced]
-  # there are appropriate png-files in /assets/images: well_done.png, hundred.png etc
+  # every criterion related to appropriate png-file in /assets/images: well_done.png, hundred.png etc
+
+  def self.criteria
+    criteria = %w[well_done hundred first_attempt elementary intermediate advanced]
+    criteria.join(', ')
+  end
 
   def self.test_result_badge(score)
     if score == 100

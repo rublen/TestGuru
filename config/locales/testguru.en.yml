@@ -79,6 +79,7 @@ en:
         new_badge: "New badge"
       new:
         header: "Create new badge"
+        available_criteria: 'Available criteria'
         link_to_badges: "<<Badges"
       create:
         success: "Badge successfully created"

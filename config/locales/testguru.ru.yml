@@ -78,6 +78,7 @@ ru:
         new_badge: "Новый бейдж"
       new:
         header: "Создать новый бейдж"
+        available_criteria: 'Доступные критерии'
         link_to_badges: "<<Бейджи"
       create:
         success: "Бейдж успешно создан"

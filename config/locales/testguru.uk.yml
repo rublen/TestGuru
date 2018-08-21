@@ -64,20 +64,22 @@ uk:
     badges:
       badge:
         body: "Файл"
-        criterion: "Критерій"
+        rule_name: "Правило"
+        rule_value: "Значення"
       index:
         header: "Колекція бейджів"
         table_header:
           id: "Id"
           title: "Назва"
           body: "Файл"
-          criterion: "Критерій"
+          rule_name: "Правило"
+          rule_value: "Значення"
           picture: "Зображення"
           actions: "Дії"
         new_badge: "Новий бейдж"
       new:
         header: "Створити новий бейдж"
-        available_criteria: 'Доступні критерії'
+        available_rules: 'Доступні правила'
         link_to_badges: "<<Бейджи"
         link_to_badges: "<<Бейджі"
       create:
@@ -93,6 +95,8 @@ uk:
         header: "Бейдж: %{badge_title}"
         id: "Id"
         body: "Файл з зображенням"
+        rule_name: "Правило"
+        rule_value: "Значення"
         picture: "Зображення"
         link_to_badges: "<<Бейджі"
         link_to_edit: "Редагувати"

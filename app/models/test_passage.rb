@@ -1,10 +1,11 @@
 class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :user
-  # has_many :badges
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_question
+
+  scope :positive_pass, -> { where 'score >= 80' }
 
   def completed?
     current_question.nil?
@@ -13,15 +14,16 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.question_counter += 1
+    self.score = count_score
     save!
   end
 
-  def score
+  def count_score
     (correct_questions * 100.0 / test.questions.count).round(2)
   end
 
   def success?
-    score >= 85
+    count_score >= 80
   end
 
   private

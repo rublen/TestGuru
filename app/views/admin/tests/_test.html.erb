@@ -11,6 +11,7 @@
                 class: 'form-inline-link' %>
   </td>
   <td class="align-middle"><%= test.category.title %></td>
+  <td class="align-middle" align="center"><%= test.level %></td>
   <td class="align-middle" align="center"><%= test.questions.count %></td>
   <td class="align-middle"><%= link_to 'show', admin_test_path(test) %></td>
   <td class="align-middle"><%= link_to 'delete', admin_test_path(test),

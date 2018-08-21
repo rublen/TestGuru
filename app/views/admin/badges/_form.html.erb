@@ -1,3 +1,4 @@
+<div class="badge-form container mt-3 mb-3">
 <%= form_with model: [:admin, @badge], local: true do |form| %>
 
   <%= render 'shared/errors', obj: @badge %>
@@ -9,10 +10,17 @@
     </p>
 
     <p>
-      <%= form.label :criterion %><br>
-      <%= form.text_field :criterion, id: :badge_criterion %>
+      <%= form.label :rule_name %><br>
+      <%= form.select('rule_name', options_for_select(Badge.rule_names), selected: params[:option], prompt: t('.choose_rule'), id: :rule_name) %>
+    </p>
+    <p>
+      <%= form.label :rule_value %><br>
+      <span style="color:gray"><%= Badge.rule_names.map { |name| "#{name}: #{Badge.rule_values(name).join(', ')} " } %></span><br>
+      <%= form.text_field :rule_value, id: :badge_rule_value %>
     </p>
 
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+

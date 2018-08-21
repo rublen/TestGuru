@@ -66,20 +66,22 @@ en:
     badges:
       badge:
         body: "File"
-        criterion: "Criterion"
+        rule_name: "Rule"
+        rule_value: "Value"
       index:
         header: "Badges Collection"
         table_header:
           id: "Id"
           title: "Title"
           body: "File"
-          criterion: "Criterion"
+          rule_name: "Rule"
+          rule_value: "Value"
           picture: "Picture"
           actions: "Actions"
         new_badge: "New badge"
       new:
         header: "Create new badge"
-        available_criteria: 'Available criteria'
+        available_rules: 'Available rules'
         link_to_badges: "<<Badges"
       create:
         success: "Badge successfully created"
@@ -94,6 +96,8 @@ en:
         header: "Badge: %{badge_title}"
         id: "Id"
         body: "File of image"
+        rule_name: "Rule"
+        rule_value: "Value"
         picture: "Picture"
         link_to_badges: "<<Badges"
         link_to_edit: "Edit"

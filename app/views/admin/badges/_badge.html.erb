@@ -1,9 +1,10 @@
 <tr>
   <td><%= badge.id %></td>
   <td>
-    <%= badge.title %><br>
+    <b><%= badge.title %></b><br>
     <%= t('.body') %>: <%= badge.body %><br>
-    <%= t('.criterion') %>: <%= badge.criterion %>
+    <%= t('.rule_name') %>: <%= badge.rule_name %><br>
+    <%= t('.rule_value') %>: <%= badge.rule_value %>
   </td>
   <td align="center"><%= image_tag(badge.body, :alt => "Badges") %></td>
   <td align="center">

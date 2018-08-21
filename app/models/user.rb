@@ -22,14 +22,13 @@ class User < ApplicationRecord
     tests.where(level: level)
   end
 
-  def passed_tests_by_scope(scope)
-    tests.send(scope).select do |test|
-      test.test_passages.any? { |tp| tp.score >= 80 }
-    end.uniq
+  # complexities: %i[elementary intermediate advanced]
+  def passed_tests_by_complexity(complexity)
+    tests.send(complexity).select { |t| t.test_passages.positive_pass }
   end
 
-  def scope_completed?(scope)
-    passed_tests_by_scope(:elementary).count == Test.send(scope).count
+  def complexity_tests_completed?(complexity)
+    passed_tests_by_complexity(complexity).uniq.count == Test.send(complexity).count
   end
 
   def test_passage(test)

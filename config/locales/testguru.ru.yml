@@ -65,20 +65,22 @@ ru:
     badges:
       badge:
         body: "Файл"
-        criterion: "Критерий"
+        rule_name: "Правило"
+        rule_value: "Значение"
       index:
         header: "Коллекция бейджей"
         table_header:
           id: "Id"
           title: "Название"
           body: "Файл"
-          criterion: "Критерий"
+          rule_name: "Правило"
+          rule_value: "Значение"
           picture: "Изображение"
           actions: "Действия"
         new_badge: "Новый бейдж"
       new:
         header: "Создать новый бейдж"
-        available_criteria: 'Доступные критерии'
+        available_rules: 'Доступные правила'
         link_to_badges: "<<Бейджи"
       create:
         success: "Бейдж успешно создан"
@@ -93,6 +95,8 @@ ru:
         header: "Бейдж: %{badge_title}"
         id: "Id"
         body: "Файл с изображением"
+        rule_name: "Правило"
+        rule_value: "Значение"
         picture: "Изображение"
         link_to_badges: "<<Бейджи"
         link_to_edit: "Редактировать"

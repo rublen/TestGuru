@@ -16,8 +16,10 @@ document.addEventListener('turbolinks:load', function() {
     }
 
     function finishTest() {
-      if(!window.location.href.includes('/result')) {
-        window.location.href = window.location.href + '/result'
+      var url = window.location.href
+      if(!url.includes('/result')) {
+        url = url.split('?')
+        window.location.href = url[0] + '/result' + ( url[1] ? '?' + url[1] : '')
       }
     }
 

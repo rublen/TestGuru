@@ -11,16 +11,22 @@
   <% end %>
 <% end %>
 
-<div class="container mt-5" align="center">
-  <h3>You're doing the <%= @test_passage.test.title %> test</h3>
-    <% if @test_passage.test.duration > 0 %>
-      <p>Time limit: <span id="duration"><%= @test_passage.test.duration %></span> min. Left: <span id="timer"></span>
-      </p>
+<div class="container mt-5">
+  <h3 align="center">You're doing the <%= @test_passage.test.title %> test</h3>
 
-    <% end %>
-    <h5 id="quest-counter" align="center">
-      Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}:"%>
-    </h5>
+  <% if @test_passage.test.duration > 0 %>
+    <p  align="center">
+      Time limit: <span><%= @test_passage.test.duration %></span> min.
+      Left: <span id="timer"
+                  data-min=<%= @test_passage.time_left[0]%>
+                  data-sec=<%= @test_passage.time_left[1].to_s %> >
+            </span>
+    </p>
+  <% end %>
+
+  <h5 id="quest-counter" align="center">
+    Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}:"%>
+  </h5>
 
 
   <div class="row justify-content-center mt-3">

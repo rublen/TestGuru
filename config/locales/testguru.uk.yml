@@ -7,6 +7,8 @@ uk:
     gist:
       success: "Gist успішно збережено: <a href='%{url}' target='_blank'>your_gist</a>"
       failure: "Під час створення gist виникла помилка"
+    update:
+      time_out: "Ваш час закінчився"
 
   tests:
     test:
@@ -17,6 +19,7 @@ uk:
         id: "Id"
         title: "Назва"
         category: "Категорія"
+        level: "Рівень"
         number_of_questions: "Кількість питань"
         actions: "Дія"
   admin:
@@ -29,6 +32,7 @@ uk:
           id: "Id"
           title: "Назва"
           category: "Категорія"
+          level: "Рівень"
           number_of_questions: "Кількість питань"
           actions: "Дії"
         new_test: "Новий тест"

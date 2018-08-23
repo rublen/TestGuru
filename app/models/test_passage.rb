@@ -26,6 +26,13 @@ class TestPassage < ApplicationRecord
     count_score >= 80
   end
 
+  def time_left
+    seconds = created_at + test.duration * 60 - Time.current
+    minutes = seconds / 60
+    seconds %= 60
+    [minutes, seconds]
+  end
+
   private
 
   def before_save_set_question

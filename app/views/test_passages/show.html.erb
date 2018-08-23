@@ -1,23 +1,27 @@
-  <%= content_tag :div, class: "progress",
-                        data: {
-                          question_counter: "#{@test_passage.question_counter}",
-                          questions_amount: "#{@test_passage.test.questions.count}"
-                        } do %>
+<%= content_tag :div, class: "progress",
+                      data: {
+                        question_counter: "#{@test_passage.question_counter}",
+                        questions_amount: "#{@test_passage.test.questions.count}"
+                      } do %>
 
-    <%= content_tag :div, class: 'progress-bar progress-bar-info progress-bar-striped',
-                          role: "progressbar",
-                          aria_valuemin: "0",
-                          aria_valuemax: "100" do %>
-    <% end %>
+  <%= content_tag :div, class: 'progress-bar progress-bar-info progress-bar-striped',
+                        role: "progressbar",
+                        aria_valuemin: "0",
+                        aria_valuemax: "100" do %>
   <% end %>
+<% end %>
 
-<div class="container mt-5">
-  <h3 align="center">
-    You're doing the <%= @test_passage.test.title %> test<br>
-    <h5 align="center">
-      Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}: "%>
+<div class="container mt-5" align="center">
+  <h3>You're doing the <%= @test_passage.test.title %> test</h3>
+    <% if @test_passage.test.duration > 0 %>
+      <p>Time limit: <span id="duration"><%= @test_passage.test.duration %></span> min. Left: <span id="timer"></span>
+      </p>
+
+    <% end %>
+    <h5 id="quest-counter" align="center">
+      Question <%= "#{@test_passage.question_counter} / #{@test_passage.test.questions.count}:"%>
     </h5>
-  </h3>
+
 
   <div class="row justify-content-center mt-3">
     <div class="col col-md-4">
@@ -38,7 +42,7 @@
           </p>
 
           <p>
-            <%= form.submit 'Next' %>
+            <%= form.submit 'Next', id: 'next-quest' %>
           </p>
         </div>
       <% end %>

@@ -8,7 +8,7 @@ class TestPassage < ApplicationRecord
   scope :positive_pass, -> { where 'score >= 80' }
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_over?
   end
 
   def accept!(answer_ids)
@@ -46,5 +46,9 @@ class TestPassage < ApplicationRecord
     else
       test.questions.order(:id).first
     end
+  end
+
+  def time_over?
+    (Time.current - created_at) / 60 >= test.duration if test.duration > 0
   end
 end

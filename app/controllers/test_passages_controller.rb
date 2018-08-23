@@ -8,6 +8,7 @@ class TestPassagesController < AuthenticatedController
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       current_user.badges << UserBadgesService.new(@test_passage).call
+      flash[:alert] = t('.time_out')
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

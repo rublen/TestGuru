@@ -30,11 +30,8 @@ class TestPassage < ApplicationRecord
     (Time.current - created_at) / 60 >= test.duration if test.duration > 0
   end
 
-  def time_left
-    seconds = created_at + test.duration * 60 - Time.current
-    minutes = seconds / 60
-    seconds %= 60
-    [minutes, seconds]
+  def time_end_point
+    created_at + test.duration * 60
   end
 
   private

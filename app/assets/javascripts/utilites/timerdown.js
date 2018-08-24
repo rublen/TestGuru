@@ -2,10 +2,17 @@ document.addEventListener('turbolinks:load', function() {
   var timer = document.querySelector('#timer');
 
   if(timer) {
-    var minutes = parseInt(timer.dataset.min)
-    var seconds = parseInt(timer.dataset.sec)
+    var endPointSec = parseInt(document.getElementById('time-end-point').textContent)
+    var timeLeftSec = endPointSec - Date.now() / 1000;
 
-    setInterval(displayTime, 1000);
+    var minutes = Math.floor(timeLeftSec / 60)
+    var seconds = Math.floor(timeLeftSec % 60)
+
+    var timeEngine = setInterval(displayTime, 1000);
+
+    window.addEventListener('hashchange', stopTimer)
+
+    function stopTimer() { clearInterval(timeEngine) }
 
     function displayTime() {
       timer.innerHTML = minutes + ':' + seconds

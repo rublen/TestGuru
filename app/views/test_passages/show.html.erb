@@ -15,12 +15,10 @@
   <h3 align="center">You're doing the <%= @test_passage.test.title %> test</h3>
 
   <% if @test_passage.test.duration > 0 %>
+    <span id="time-end-point" class="hide"><%= @test_passage.time_end_point.to_f %></span>
     <p  align="center">
-      Time limit: <span><%= @test_passage.test.duration %></span> min.
-      Left: <span id="timer"
-                  data-min=<%= @test_passage.time_left[0]%>
-                  data-sec=<%= @test_passage.time_left[1].to_s %> >
-            </span>
+      Time limit: <span id="duration"><%= @test_passage.test.duration %></span> min.
+      Left: <span id="timer"></span>
     </p>
   <% end %>
 

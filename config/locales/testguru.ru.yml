@@ -7,6 +7,8 @@ ru:
     gist:
       success_html: "Gist был успешно сохранен: <a href='%{url}' target='_blank'>your_gist</a>"
       failure: "Во время сохранения gist произошла ошибка"
+    update:
+      time_out: "Ваше время вышло"
 
   tests:
     test:
@@ -17,6 +19,7 @@ ru:
         id: "Id"
         title: "Название"
         category: "Категория"
+        level: "Уровень"
         number_of_questions: "Количество вопросов"
         actions: "Действие"
 
@@ -30,6 +33,7 @@ ru:
           id: "Id"
           title: "Название"
           category: "Категория"
+          level: "Уровень"
           number_of_questions: "Количество вопросов"
           actions: "Действия"
         new_test: "Новый тест"

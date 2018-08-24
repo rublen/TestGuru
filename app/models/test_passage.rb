@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   before_save :before_save_set_question
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_out?
   end
 
   def accept!(answer_ids)
@@ -22,6 +22,14 @@ class TestPassage < ApplicationRecord
 
   def success?
     count_score >= 80
+  end
+
+  def time_out?
+    (Time.current - created_at) / 60 >= test.duration if test.duration > 0
+  end
+
+  def time_end_point
+    created_at + test.duration * 60
   end
 
   private

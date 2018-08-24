@@ -7,6 +7,8 @@ en:
     gist:
       success_html: "Gist was successfully saved: <a href='%{url}' target='_blank'>your_gist</a>"
       failure: "Some error has occurred during creating the gist "
+    update:
+      time_out: "You're out of time"
 
   tests:
     test:
@@ -17,6 +19,7 @@ en:
         id: "Id"
         title: "Title"
         category: "Category"
+        level: "Level"
         number_of_questions: "Number of questions"
         actions: "Action"
 
@@ -30,6 +33,7 @@ en:
           id: "Id"
           title: "Title"
           category: "Category"
+          level: "Level"
           number_of_questions: "Number of questions"
           actions: "Actions"
         new_test: "New Test"

@@ -32,5 +32,5 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[] do
     get :badges, on: :member
-end
+  end
 end

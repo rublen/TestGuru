@@ -1,0 +1,5 @@
+ <div class="container-fluid">
+  <% current_user.badges.each do |badge| %>
+    <%= image_tag(badge.body, alt: "Badge") %>
+  <% end %>
+ </div>

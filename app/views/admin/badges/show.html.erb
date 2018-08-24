@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <h1><%= t('.header', badge_title: @badge.title) %></h1>
+  <div class="container">
+    <%= "ID: #{@badge.id}" %><br>
+    <%= t('.body') %>: <%= @badge.body %><br>
+    <%= t('.rule_name') %>: <%= @badge.rule_name %><br>
+    <%= t('.rule_value') %>: <%= @badge.rule_value %>
+  </div>
+  <div class="container mt-2">
+    <%= image_tag(@badge.body, :alt => "Badges") %>
+  </div>
+  <div class="container">
+    <%= link_to t('.link_to_badges'), admin_badges_path %> |
+    <%= link_to t('.link_to_edit'), edit_admin_badge_path(@badge) %>
+  </div>
+</div>

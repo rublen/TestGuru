@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180812164509) do
+ActiveRecord::Schema.define(version: 20180820100640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(version: 20180812164509) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "rule_name", null: false
+    t.string "rule_value"
+    t.index ["rule_name", "rule_value"], name: "index_badges_on_rule_name_and_rule_value", unique: true
+  end
+
+  create_table "badges_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_badges_users_on_badge_id"
+    t.index ["user_id"], name: "index_badges_users_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,7 +73,8 @@ ActiveRecord::Schema.define(version: 20180812164509) do
     t.datetime "updated_at", null: false
     t.integer "current_question_id"
     t.integer "question_counter", default: 1, null: false
-    t.index ["current_question_id"], name: "index_test_passages_on_question_id"
+    t.integer "score", default: 0, null: false
+    t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
   end
@@ -97,4 +117,6 @@ ActiveRecord::Schema.define(version: 20180812164509) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "badges_users", "badges"
+  add_foreign_key "badges_users", "users"
 end

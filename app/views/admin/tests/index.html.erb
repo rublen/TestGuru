@@ -14,6 +14,7 @@
             <%= octicon 'arrow-down', class: 'text-success hide' %>
           </th>
           <th class="align-middle"><%= t('.table_header.category') %></th>
+          <th style="text-align: center"><%= t('.table_header.level') %></th>
           <th style="text-align: center" class="align-middle"><%= t('.table_header.number_of_questions') %></th>
           <th colspan="3" style="text-align: center" class="align-middle"><%= t('.table_header.actions') %></th>
         </tr>
@@ -23,7 +24,8 @@
    </div>
 
   <div class="container">
-    <%= link_to t('.new_test'), new_admin_test_path(@test) %><br>
-    <%= link_to 'Gists', admin_gists_path %>
+    <%= link_to t('.new_test'), new_admin_test_path(@test) %> |
+    <%= link_to 'Gists', admin_gists_path %> |
+    <%= link_to t('.badges'), admin_badges_path %>
   </div>
 </div>

@@ -12,15 +12,16 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.question_counter += 1
+    self.score = count_score
     save!
   end
 
-  def score
+  def count_score
     (correct_questions * 100.0 / test.questions.count).round(2)
   end
 
   def success?
-    score >= 85
+    count_score >= 80
   end
 
   private

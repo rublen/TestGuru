@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h1><%= t('.header', badge_title: @badge.title) %></h1>
+  <%= render 'form', badge: @badge %>
+  <p>
+    <%= link_to t('.link_to_badges'), admin_badges_path %> |
+    <%= link_to t('.link_to_badge'),admin_badge_path(@badge) %>
+  </p>
+</div>

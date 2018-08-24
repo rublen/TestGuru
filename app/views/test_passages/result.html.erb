@@ -3,5 +3,7 @@
 
   <%= test_result(@test_passage) %>
 
+  <%= render 'shared/user_badges', user: current_user %>
+
   <%= link_to '<< Tests', tests_path %>
 </div>

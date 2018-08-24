@@ -1,4 +1,10 @@
 class Badge < ApplicationRecord
+  RULES = {
+    'by_score' => [80, 100],
+    'from_first_attempt' => [nil],
+    'by_complexity' => ['elementary', 'intermediate', 'advanced']
+  }
+
   has_many :test_passages
   has_and_belongs_to_many :users
 
@@ -10,17 +16,10 @@ class Badge < ApplicationRecord
   end
 
   def self.rule_names
-    ['by_score', 'from_first_attempt', 'by_complexity']
+    RULES.keys
   end
 
   def self.rule_values(rule_name)
-    case rule_name
-    when 'by_score'
-      [80, 100]
-    when 'from_first_attempt'
-      [nil]
-    when 'by_complexity'
-      ['elementary', 'intermediate', 'advanced']
-    end
+    RULES[rule_name]
   end
 end

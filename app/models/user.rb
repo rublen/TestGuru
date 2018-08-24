@@ -24,7 +24,7 @@ class User < ApplicationRecord
 
   # complexities: %i[elementary intermediate advanced]
   def passed_tests_by_complexity(complexity)
-    tests.send(complexity).select { |t| t.test_passages.positive_pass }
+    tests.public_send(complexity).where('test_passages.score >= 80')
   end
 
   def complexity_tests_completed?(complexity)

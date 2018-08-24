@@ -5,8 +5,6 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_question
 
-  scope :positive_pass, -> { where 'score >= 80' }
-
   def completed?
     current_question.nil?
   end
